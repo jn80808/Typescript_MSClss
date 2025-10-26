@@ -1,3 +1,7 @@
+//-------------------------------------//
+// 75.Creating First Class and Instance
+//-------------------------------------//
+
 
 class User{
     name = "Jhon";
@@ -11,6 +15,15 @@ class User{
 const user = new User();
 
 console.log(user);
+
+//------------------------//
+// 76.Constructor Function
+//------------------------//
+
+
+
+
+
 
 
 
