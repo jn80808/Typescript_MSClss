@@ -52,6 +52,7 @@ class User2{
 
     constructor(name:string, email:string){
         this.name = name;
+        this.email = email;
         console.log(email);
     }
 
