@@ -57,14 +57,14 @@ class User2{
     }
 
     greet(){
-        return `hello jhon`;
+        return `hello ${this.name}`;
     }
 }
 
-const user3 = new User();
-const user4 = new User1("JJ","joyng808@gmail.com");
+const user5 = new User2("ff","joygng808@gmail.com");
+const user6 = new User2("JJ","joygng808@gmail.com");
 
-console.log(user);
-
+console.log(user5);
+console.log(user6.greet);
 
 
