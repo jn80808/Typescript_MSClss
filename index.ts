@@ -115,3 +115,10 @@ class Admin {
         return `hello ${this.name}`;
     }
 }
+
+// this is correct way to do the inheretance decalare a extends too 
+
+class Admin1 extends User {
+
+
+}
