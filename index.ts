@@ -167,12 +167,13 @@ class Admin2 extends User3 {
     userReporting: number;
 
     constructor(
-    userReporting: number,
     name: string,
     email: string,
+    userReporting: number,
+    lastname?: string // optional to put pero just added nalang din 
 
     ){
-        super();
+        super(name,email,lastname);
         this.userReporting = userReporting;
     }
 
@@ -180,6 +181,7 @@ class Admin2 extends User3 {
 
 //And I'm going to create another user over here.
 const admin2: Admin = new Admin1("Mark", "marker@gmail.com");
+const admin3: Admin2 = new Admin2("Mark", "marker@gmail.com",11);
 
 console.log(user);
 console.log(admin);
