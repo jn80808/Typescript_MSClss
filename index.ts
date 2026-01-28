@@ -82,10 +82,12 @@ class User3{
 
     name: string;
     email: string;
+    lastname?: string;
 
-    constructor(name:string, email:string){
+    constructor(name:string, email:string, lastname?: string){
         this.name = name;
         this.email = email;
+        lastname = lastname;
         console.log(email);
     }
 
@@ -151,6 +153,53 @@ const admin: Admin = new Admin1("Mark", "marker@gmail.com");
 
 console.log(user);
 console.log(admin);
+
+
+//----------------------------//
+// 81. SuperMethod 
+//----------------------------//
+
+
+
+
+class Admin2 extends User3 {
+    isAdmin: boolean = true;
+    userReporting: number;
+
+    constructor(
+    userReporting: number,
+    name: string,
+    email: string,
+
+    ){
+        super();
+        this.userReporting = userReporting;
+    }
+
+}
+
+//And I'm going to create another user over here.
+const admin2: Admin = new Admin1("Mark", "marker@gmail.com");
+
+console.log(user);
+console.log(admin);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
