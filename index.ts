@@ -239,20 +239,54 @@ class Book {
         this.title = title;
         this.ISBN = ISBN;
         this.author = author;
+        
+        if(yearPublish){
+            this.yearPublish = yearPublish;
+        }
+
 
     }
-
-
-
-
 }
 
+    const firstBook = new Book("The Greate Gatsby", "F.Scott","113355",1938);
+    console.log(firstBook);
+
+    function logBookDetails(book: Book):void {
+        console.log (`Title: ${book.title}`);
+        console.log (`Author: ${book.author}`);
+        console.log (`ISBN: ${book.ISBN}`);
+        
+        if (book.yearPublish){
+            console.log(`Year Pubslished: ${book.yearPublish}`);
+
+        }
+    }
+
+    logBookDetails(firstBook);
 
 
+    class Ebook extends Book {
+        fileSize: number;
+        format: string;
 
 
+        constructor(
+            title: string,
+            author: string,
+            ISBN: string,
+            fileSize: number,
+            format: string,
+            yearPublish?: number
+        ){
+            super( title, author,ISBN, yearPublish);
+            this.fileSize = fileSize;
+            this.format = format; 
+        }
+    }
 
+    const firstEBook = new Ebook("the great joyRICH", "N.Gonzaga","435345",2,"PDF",1998)
 
+    logBookDetails(firstBook);
 
 
 
