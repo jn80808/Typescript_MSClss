@@ -300,6 +300,13 @@ class Book {
  * >> When we start talking about inheritance, these become very important.
  * >> Access modifiers let you control whether the child class or whether the instance of a class would have
  * access to a specific property of the class or the method of the class.
+ * here are
+ *  three types of access modifiers.
+ * >> The first one is public, second is protected, and then private.
+
+ * 
+ * 
+ * 
  */
 
 
