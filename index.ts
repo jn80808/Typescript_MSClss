@@ -293,7 +293,14 @@ class Book {
 // 84.Access Modifiers 
 //---------------------------------//
 
-
+/**
+ * >> Access modifiers.
+ * As the name suggests, you can use TypeScript to control whether certain methods or properties are visible
+ * to code outside the class.
+ * >> When we start talking about inheritance, these become very important.
+ * >> Access modifiers let you control whether the child class or whether the instance of a class would have
+ * access to a specific property of the class or the method of the class.
+ */
 
 
 
