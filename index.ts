@@ -339,5 +339,25 @@ const user99 = new User4("JJ","joygng808@gmail.com");
 
 
 
+class Admin3 extends User3 {
+    isAdmin: boolean = true;
+    userReporting: number;
 
+    constructor(
+    name: string,
+    email: string,
+    userReporting: number,
+    lastname?: string // optional to put pero just added nalang din 
+
+    ){
+        super(name,email,lastname);
+        this.userReporting = userReporting;
+    }
+
+    //public modifiers accessing the name from USER Properties which is the parent class 
+    public printName(){
+        console.log(this.name);
+    }
+
+}
 
