@@ -360,4 +360,25 @@ class Admin3 extends User3 {
     }
 
 }
+// using the "this" keyword inside the child class, you can access the properties of the parent class also.
+const admin4: Admin = new Admin1("Mark", "marker@gmail.com");
+const admin5: Admin3 = new Admin3("Mark", "marker@gmail.com",11);
+
+console.log(user);
+console.log(admin);
+
+
+console.log(user.name);
+admin5.printName();
+
+
+
+
+
+
+
+
+
+
+
 
