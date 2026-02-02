@@ -303,11 +303,40 @@ class Book {
  * here are
  *  three types of access modifiers.
  * >> The first one is public, second is protected, and then private.
-
- * 
- * 
- * 
  */
+
+
+//----------------------------------//
+// 84.Access Modifiers 
+//---------------------------------//
+
+// by default typescript properties and method set to default 
+// we can explicitly declare public modifiers 
+// we can explicitly declare a public modifier in properties and method 
+
+
+
+class User4{
+
+    public name: string; // properties 
+    email: string;
+    lastname?: string;
+
+    constructor(name:string, email:string, lastname?: string){
+        this.name = name;
+        this.email = email;
+        lastname = lastname;
+        console.log(email);
+    }
+
+    public greet(){ // method 
+        return `hello ${this.name}`;
+    }
+}
+
+const user9 = new User4("ff","joygng808@gmail.com");
+const user99 = new User4("JJ","joygng808@gmail.com");
+
 
 
 
