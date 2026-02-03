@@ -390,11 +390,12 @@ class User5{
     lastname?: string;
     protected phone: number;
 
+
     constructor(name:string, email:string, phone:number,  lastname?: string){
         this.name = name;
         this.email = email;
-        lastname = lastname;
         this.phone = phone;
+        lastname = lastname;
         console.log(email);
 
     }
@@ -409,18 +410,20 @@ const user11 = new User4("JJ","joygng808@gmail.com");
 
 
 
-class Admin5 extends User3 {
+class Admin5 extends User5 {
     isAdmin: boolean = true;
     userReporting: number;
 
     constructor(
     name: string,
     email: string,
+    phone:number,
     userReporting: number,
     lastname?: string // optional to put pero just added nalang din 
 
+
     ){
-        super(name,email,lastname);
+        super(name,email,phone,lastname);
         this.userReporting = userReporting;
     }
 
@@ -429,12 +432,16 @@ class Admin5 extends User3 {
         console.log(this.name);
     }
 
-    
+    //protected modifiers 
+        public printPhone(){
+        console.log(this.phone);
+    }
+
 
 }
 // using the "this" keyword inside the child class, you can access the properties of the parent class also.
 const admin6: Admin = new Admin1("Mark", "marker@gmail.com");
-const admin7: Admin5 = new Admin3("Mark", "marker@gmail.com",11);
+const admin7: Admin5 = new Admin5("Mark", "marker@gmail.com",5645,11);
 
 console.log(user);
 console.log(admin7);
