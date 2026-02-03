@@ -388,12 +388,15 @@ class User5{
     public name: string; // properties 
     email: string;
     lastname?: string;
+    protected phone: number;
 
-    constructor(name:string, email:string, lastname?: string){
+    constructor(name:string, email:string, phone:number,  lastname?: string){
         this.name = name;
         this.email = email;
         lastname = lastname;
+        this.phone = phone;
         console.log(email);
+
     }
 
     public greet(){ // method 
@@ -425,6 +428,8 @@ class Admin5 extends User3 {
     public printName(){
         console.log(this.name);
     }
+
+    
 
 }
 // using the "this" keyword inside the child class, you can access the properties of the parent class also.
