@@ -307,7 +307,7 @@ class Book {
 
 
 //----------------------------------//
-// 84.Access Modifiers 
+// 85.Public Modifiers 
 //---------------------------------//
 
 // by default typescript properties and method set to default 
@@ -365,17 +365,78 @@ const admin4: Admin = new Admin1("Mark", "marker@gmail.com");
 const admin5: Admin3 = new Admin3("Mark", "marker@gmail.com",11);
 
 console.log(user);
-console.log(admin);
+console.log(admin5);
 
 
 console.log(user.name);
 admin5.printName();
 
+//----------------------------------//
+// 85.Protected Modifiers 
+//---------------------------------//
+
+/**
+ * - >> So whenever you add a protected access modifier to a property or a method of that class, that particular
+ * property or method is not available in the final object that you create.
+ * - >> A protected method or a property is only available in the child class, as well as in the parent class
+ * or the class that you declare that particular property or method in.
+ * - >> This is the only difference between public and protected.
+ */
+
+class User5{
+
+    public name: string; // properties 
+    email: string;
+    lastname?: string;
+
+    constructor(name:string, email:string, lastname?: string){
+        this.name = name;
+        this.email = email;
+        lastname = lastname;
+        console.log(email);
+    }
+
+    public greet(){ // method 
+        return `hello ${this.name}`;
+    }
+}
+
+const user10 = new User4("ff","joygng808@gmail.com");
+const user11 = new User4("JJ","joygng808@gmail.com");
 
 
 
+class Admin5 extends User3 {
+    isAdmin: boolean = true;
+    userReporting: number;
+
+    constructor(
+    name: string,
+    email: string,
+    userReporting: number,
+    lastname?: string // optional to put pero just added nalang din 
+
+    ){
+        super(name,email,lastname);
+        this.userReporting = userReporting;
+    }
+
+    //public modifiers accessing the name from USER Properties which is the parent class 
+    public printName(){
+        console.log(this.name);
+    }
+
+}
+// using the "this" keyword inside the child class, you can access the properties of the parent class also.
+const admin6: Admin = new Admin1("Mark", "marker@gmail.com");
+const admin7: Admin5 = new Admin3("Mark", "marker@gmail.com",11);
+
+console.log(user);
+console.log(admin7);
 
 
+console.log(user.name);
+admin5.printName();
 
 
 
