@@ -458,3 +458,75 @@ admin5.printName();
 
 
 
+class User6{
+
+    public name: string; // properties 
+    email: string;
+    lastname?: string;
+    private phone: number;
+
+
+    constructor(name:string, email:string, phone:number,  lastname?: string){
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        lastname = lastname;
+        console.log(email);
+
+    }
+
+    //public modifier method
+    public greet(){ // method 
+        return `hello ${this.name}`;
+    }
+
+    //private modifier method
+        public printPhone(){
+        console.log(this.phone);
+    }
+
+}
+
+const user12 = new User6("Mark", "marker@gmail.com",5645);
+
+
+
+class Admin6 extends User6 {
+    isAdmin: boolean = true;
+    userReporting: number;
+
+    constructor(
+    name: string,
+    email: string,
+    phone:number,
+    userReporting: number,
+    lastname?: string // optional to put pero just added nalang din 
+
+
+    ){
+        super(name,email,phone,lastname);
+        this.userReporting = userReporting;
+    }
+
+    //public modifiers accessing the name from USER Properties which is the parent class 
+    public printName(){
+        console.log(this.name);
+    }
+
+    //protected modifiers 
+    //     public printPhone(){
+    //     console.log(this.phone);
+    // }
+
+
+}
+// using the "this" keyword inside the child class, you can access the properties of the parent class also.
+const admin9: Admin6 = new Admin6("Mark", "marker@gmail.com",5645,11);
+
+user12.printPhone(); 
+
+
+
+
+
+
