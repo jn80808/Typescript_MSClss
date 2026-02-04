@@ -455,9 +455,6 @@ admin5.printName();
 // 87.Private Modifiers / Private Members
 //-------------------------------------//
 
-
-
-
 class User6{
 
     public name: string; // properties 
