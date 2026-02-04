@@ -306,9 +306,9 @@ class Book {
  */
 
 
-//----------------------------------//
-// 85.Public Modifiers 
-//---------------------------------//
+//--------------------------------------//
+// 85.Public Modifiers / Public Members
+//--------------------------------------//
 
 // by default typescript properties and method set to default 
 // we can explicitly declare public modifiers 
@@ -371,9 +371,9 @@ console.log(admin5);
 console.log(user.name);
 admin5.printName();
 
-//----------------------------------//
-// 85.Protected Modifiers 
-//---------------------------------//
+//--------------------------------------------//
+// 86.Protected Modifiers / Protected Members 
+//--------------------------------------------//
 
 /**
  * - >> So whenever you add a protected access modifier to a property or a method of that class, that particular
@@ -451,6 +451,9 @@ console.log(user.name);
 admin5.printName();
 
 
+//-------------------------------------//
+// 87.Private Modifiers / Private Members
+//-------------------------------------//
 
 
 
