@@ -522,6 +522,18 @@ const admin9: Admin6 = new Admin6("Mark", "marker@gmail.com",5645,11);
 
 user12.printPhone(); 
 
+//--------------------------------------------//
+// 89. Overriding Methods in Child Class
+//-------------------------------------------//
+
+
+
+
+
+
+
+
+
 
 
 
