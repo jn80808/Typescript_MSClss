@@ -574,13 +574,17 @@ class Admin7 extends User6 {
         super(name,email,phone,lastname);
         this.userReporting = userReporting;
     }
+
+        //overriding the greet method in the child class
+        public greet(){ 
+        return `hello ${this.name}! I'm an admin.`;
+    }
 }
+
 // using the "this" keyword inside the child class, you can access the properties of the parent class also.
-const admin10: Admin6 = new Admin6("Mark", "marker@gmail.com",5645,11);
 
-user12.printPhone(); 
-
-
+const admin10: Admin7 = new Admin7("Mark", "marker@gmail.com",5645,11);
+const user_A = new User7("JOY","joygng808@gmail.com",123);
 
 
 
