@@ -526,6 +526,59 @@ user12.printPhone();
 // 89. Overriding Methods in Child Class
 //-------------------------------------------//
 
+/**
+ * it is possible to override some method inside a child class and give a different output inside the child class.
+ */
+
+
+class User7{
+
+    public name: string; // properties 
+    email: string;
+    lastname?: string;
+    private phone: number;
+
+
+    constructor(name:string, email:string, phone:number,  lastname?: string){
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        lastname = lastname;
+        console.log(email);
+
+    }
+
+    //public modifier method
+    public greet(){ // method 
+        return `hello ${this.name}`;
+    }
+}
+
+const user13 = new User6("Mark", "marker@gmail.com",5645);
+
+
+
+class Admin7 extends User6 {
+    isAdmin: boolean = true;
+    userReporting: number;
+
+    constructor(
+    name: string,
+    email: string,
+    phone:number,
+    userReporting: number,
+    lastname?: string // optional to put pero just added nalang din 
+
+
+    ){
+        super(name,email,phone,lastname);
+        this.userReporting = userReporting;
+    }
+}
+// using the "this" keyword inside the child class, you can access the properties of the parent class also.
+const admin10: Admin6 = new Admin6("Mark", "marker@gmail.com",5645,11);
+
+user12.printPhone(); 
 
 
 
