@@ -613,19 +613,17 @@ const user14 = new User8("Mark", "marker@gmail.com",5645);
 
 class Admin78 extends User8 {
     isAdmin: boolean = true;
-    userReporting: number;
 
     constructor(
     name: string,
     email: string,
     phone:number,
-    userReporting: number,
+    public userReporting: number,
     lastname?: string // optional to put pero just added nalang din 
 
 
     ){
         super(name,email,phone,lastname);
-        this.userReporting = userReporting;
     }
 
         //overriding the greet method in the child class
