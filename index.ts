@@ -587,6 +587,65 @@ const admin10: Admin7 = new Admin7("Mark", "marker@gmail.com",5645,11);
 const user_A = new User7("JOY","joygng808@gmail.com",123);
 
 
+//----------------------------------------------//
+// 90.ShortHand for Constructor and Properties
+//---------------------------------------------//
+
+
+class User8{
+
+    public name: string; // properties 
+    email: string;
+    lastname?: string;
+    private phone: number;
+
+
+    constructor(name:string, email:string, phone:number,  lastname?: string){
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        lastname = lastname;
+        console.log(email);
+
+    }
+
+    //public modifier method
+    public greet(){ // method 
+        return `hello ${this.name}`;
+    }
+}
+
+const user14 = new User8("Mark", "marker@gmail.com",5645);
+
+
+
+class Admin78 extends User8 {
+    isAdmin: boolean = true;
+    userReporting: number;
+
+    constructor(
+    name: string,
+    email: string,
+    phone:number,
+    userReporting: number,
+    lastname?: string // optional to put pero just added nalang din 
+
+
+    ){
+        super(name,email,phone,lastname);
+        this.userReporting = userReporting;
+    }
+
+        //overriding the greet method in the child class
+        public greet(){ 
+        return `hello ${this.name}! I'm an admin.`;
+    }
+}
+
+// using the "this" keyword inside the child class, you can access the properties of the parent class also.
+
+const admin11: Admin78 = new Admin78("Mark", "marker@gmail.com",5645,11);
+const user_b = new User8("JOY","joygng808@gmail.com",123);
 
 
 
