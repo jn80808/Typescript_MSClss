@@ -594,20 +594,12 @@ const user_A = new User7("JOY","joygng808@gmail.com",123);
 
 class User8{
 
-    public name: string; // properties 
-    email: string;
-    lastname?: string;
-    private phone: number;
-
-
-    constructor(name:string, email:string, phone:number,  lastname?: string){
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        lastname = lastname;
-        console.log(email);
-
-    }
+    constructor(
+        public name:string, 
+        public readonly email:string, 
+        private phone:number,  
+        public lastname?: string)
+    {}
 
     //public modifier method
     public greet(){ // method 
