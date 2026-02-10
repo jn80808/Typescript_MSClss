@@ -3,6 +3,7 @@
 //---------------------------------------------//
 
 class Person {
+    public fullName: string;
 
     constructor(    
     public firstName: string,
@@ -12,8 +13,23 @@ class Person {
     if (age > 200 || age < 0) {
         throw new Error("Age must be between 0 and 200");
     }
+
+    this.fullName = `${firstName} ${lastName}`;
 }
+
+    // public getFullName(): string {
+    //     return `${this.firstName} ${this.lastName}`;
+    // }
+
+
 }
 
 const person1 = new Person("John", "Doe", 300);
 const person2 = new Person("Jane", "Smith", -25);
+
+// console.log(person1.getFullName());
+
+
+console.log(person2.fullName);
+
+
