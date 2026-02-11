@@ -49,8 +49,7 @@ class Person2 {
         if (age > 200 || age < 0) {
             throw new Error("Age must be between 0 and 200");
         }
-        this
-
+        this._age = age;
 }
 
     public FullName(): string {
@@ -65,6 +64,12 @@ const person4 = new Person2("Jane", "Smith");
 
 
 console.log(person4.FullName());
+
+// person4.age() = 25; // This will throw an error
+person3.age = 300; // This will throw an error
+person4.age = 25; // This will work fine
+
+
 
 
 
