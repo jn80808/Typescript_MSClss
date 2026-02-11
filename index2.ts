@@ -40,25 +40,22 @@ console.log(person2.fullName);
 
 
 class Person2 {
-    public fullName: string;
+    private _age?: number;
 
-    constructor(    
-    public firstName: string,
-    public lastName: string,
-    public age: number
-) {
-    if (age > 200 || age < 0) {
-        throw new Error("Age must be between 0 and 200");
-    }
+    constructor(  public firstName: string, public lastName: string) {}
 
-    this.fullName = `${firstName} ${lastName}`;
+
+    public set age(age: number) {
+        if (age > 200 || age < 0) {
+            throw new Error("Age must be between 0 and 200");
+        }
+        this
+
 }
 
-    // public getFullName(): string {
-    //     return `${this.firstName} ${this.lastName}`;
-    // }
-
-
+    public FullName(): string {
+        return `${this.firstName} ${this.lastName}`;
+    }
 }
 
 const person3 = new Person2("John", "Doe", 300);
@@ -67,7 +64,7 @@ const person4 = new Person2("Jane", "Smith", -25);
 // console.log(person1.getFullName());
 
 
-console.log(person4.fullName());
+console.log(person4.FullName());
 
 
 
