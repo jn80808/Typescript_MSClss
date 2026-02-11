@@ -58,8 +58,8 @@ class Person2 {
     }
 }
 
-const person3 = new Person2("John", "Doe", 300);
-const person4 = new Person2("Jane", "Smith", -25);
+const person3 = new Person2("John", "Doe");
+const person4 = new Person2("Jane", "Smith");
 
 // console.log(person1.getFullName());
 
