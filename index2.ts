@@ -37,8 +37,6 @@ console.log(person2.fullName);
 // 92.Using Mutators - Setters
 //---------------------------------------------//
 
-
-
 class Person2 {
     private _age?: number;
 
@@ -49,6 +47,7 @@ class Person2 {
         if (age > 200 || age < 0) {
             throw new Error("Age must be between 0 and 200");
         }
+
         this._age = age;
 }
 
@@ -68,6 +67,63 @@ console.log(person4.FullName());
 // person4.age() = 25; // This will throw an error
 person3.age = 300; // This will throw an error
 person4.age = 25; // This will work fine
+
+
+//----------------------------------------------//
+// 93.Using Accessors - Getters
+//---------------------------------------------//
+
+class Person3 {
+    private _age?: number;
+
+    constructor(  public firstName: string, public lastName: string) {}
+
+
+    public set age(age: number) {
+        if (age > 200 || age < 0) {
+            throw new Error("Age must be between 0 and 200");
+        }
+
+        this._age = age;
+}
+
+
+    public get age(): number | undefined {
+        if (this._age !== undefined ) {
+            throw new Error("Age must be between 0 and 200");
+        }
+
+
+        return this._age;
+    }
+
+    public FullName(): string {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+const person5 = new Person3("John", "Doe");
+const person6 = new Person3("Jane", "Smith");
+
+// console.log(person1.getFullName());
+
+
+console.log(person6.FullName());
+
+// person4.age() = 25; // This will throw an error
+person5.age = 300; // This will throw an error
+person6.age = 25; // This will work fine
+
+
+//----------------------------------------------//
+// 94.Static Members
+//---------------------------------------------//
+
+class Counter {
+    static count=  0;   
+}
+
+
 
 
 
