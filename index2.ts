@@ -120,11 +120,25 @@ person6.age = 25; // This will work fine
 //---------------------------------------------//
 
 class Counter {
-    static count=  0;   
+    static count=  0;  
+    
+    static increment() {    
+        Counter.count++;
+    }
+
 }
 
 
+console.log(Counter.count); // Output: 0
+Counter.increment();
+console.log(Counter.count); // Output: 1
 
+Counter.increment();
+console.log(Counter.count); // Output: 2    
+
+const counter1 = new Counter();
+counter1.increment(); // Error: Property 'increment' does not exist on type 'Counter'.
+const counter2 = new Counter(); 
 
 
 
