@@ -146,6 +146,10 @@ const counter2 = new Counter();
 // 95.Understanding Static Blocks
 //---------------------------------------------//
 
+function loadInitialCount(): number {
+    console.log("Loading initial count...");
+    return 5; // Simulate loading from a database or configuration
+}
 
 
 class Counter1 {
@@ -157,7 +161,8 @@ class Counter1 {
 
     static {
         console.log("Initilizing Counter class.");
-        Counter.count = 5; // Initialize count to 5
+        //Counter.count = 5; // Initialize count to 5
+        Counter.count = loadInitialCount(); // Initialize count using a function
     }
 }
 
@@ -172,6 +177,38 @@ console.log(Counter1.count); // Output: 7
 const counter3 = new Counter1();
 const counter4 = new Counter1   (); 
 
+
+
+function loadInitialCount1(): number {
+    console.log("Loading initial count...");
+    return 10; 
+}
+
+
+class Counter2 {
+    static count=  0;  
+    
+    static increment() {    
+        Counter2.count++;
+    }
+
+    static {
+        console.log("Initilizing Counter class.");
+        //Counter.count = 5; // Initialize count to 5
+        Counter2.count = loadInitialCount1(); // Initialize count using a function
+    }
+}
+
+
+console.log(Counter2.count); // Output: 5
+Counter2.increment();
+console.log(Counter2.count); // Output: 6
+
+Counter2.increment();
+console.log(Counter2.count); // Output: 7    
+
+const counter5 = new Counter2();
+const counter6 = new Counter2   (); 
 
 
 
