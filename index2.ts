@@ -142,11 +142,41 @@ const counter2 = new Counter();
 
 
 
-
-
 //----------------------------------------------//
 // 95.Understanding Static Blocks
 //---------------------------------------------//
+
+
+
+class Counter1 {
+    static count=  0;  
+    
+    static increment() {    
+        Counter.count++;
+    }
+
+    static {
+        console.log("Initilizing Counter class.");
+        Counter.count = 5; // Initialize count to 5
+    }
+}
+
+
+console.log(Counter1.count); // Output: 5
+Counter1.increment();
+console.log(Counter1.count); // Output: 6
+
+Counter1.increment();
+console.log(Counter1.count); // Output: 7    
+
+const counter3 = new Counter1();
+const counter4 = new Counter1   (); 
+
+
+
+
+
+
 
 
 
