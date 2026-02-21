@@ -273,10 +273,32 @@ console.log(stringBox.value); // Output: World
 stringBox.value = 123; // Error: Type 'number' is not assignable to type 'string'
 
 
+//----------------------------------------------//
+// 97. Generics Use Case
+//---------------------------------------------//
 
 
+class Repository{   
+    private items: any[] = [];
 
+    add(item: any): void {
+        this.items.push(item);
+    }
 
+    getAll(): any[] {
+        return this.items;
+    }
+
+    getById(id: number): any {
+        return this.items.find(item => item.id === id);
+    }   
+
+    removebyId(id: number): void {
+        this.items = this.items.filter(item => item.id !== id);
+    }   
+
+    
+}
 
 
 
