@@ -266,6 +266,12 @@ console.log(numberBox.value); // Output: 456
 numberBox.value = "Hello"; // Error: Type 'string' is not assignable to type 'number'
 
 
+const stringBox = new Box2<string>("Hello");
+console.log(stringBox.value); // Output: Hello
+stringBox.value = "World";
+console.log(stringBox.value); // Output: World
+stringBox.value = 123; // Error: Type 'number' is not assignable to type 'string'
+
 
 
 
