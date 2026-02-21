@@ -216,13 +216,56 @@ const counter6 = new Counter2   ();
 // 96. Generics with classes 
 //---------------------------------------------//
 
+class Box {
+    private _value: any;
 
-class Box<T> {
+    constructor(value: any) {
+        this._value = value;
+    }       
 
+    get value(): any {
+        return this._value;
+    }
 
+    set value(newValue: any) {
+        this._value = newValue;
+    }   
 
-    
 }
+
+const numberBox1 = new Box(123);
+console.log(numberBox1.value); // Output: 123    
+numberBox1.value = 456;
+console.log(numberBox1.value); // Output: 456
+numberBox1.value = "Hello"; // Error: Type 'string' is not assignable to type 'number'
+
+
+//use generic type T to represent the type of value stored in the box. This allows us to create boxes that can hold any type of value, 
+// while still providing type safety.
+class Box2<T> {
+    private _value: T;
+
+    constructor(value: T) {
+        this._value = value;
+    }       
+
+    get value(): T {
+        return this._value;
+    }
+
+    set value(newValue: T) {
+        this._value = newValue;
+    }   
+
+}
+
+const numberBox = new Box2<number>(123);
+console.log(numberBox.value); // Output: 123    
+numberBox.value = 456;
+console.log(numberBox.value); // Output: 456
+numberBox.value = "Hello"; // Error: Type 'string' is not assignable to type 'number'
+
+
 
 
 
