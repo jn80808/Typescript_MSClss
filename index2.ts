@@ -277,7 +277,7 @@ stringBox.value = 123; // Error: Type 'number' is not assignable to type 'string
 // 97. Generics Use Case
 //---------------------------------------------//
 
-
+//ORIGINAL CODE Extends 
 class Repository{   
     private items: any[] = [];
 
@@ -301,6 +301,34 @@ class Repository{
 }
 
 
+//with generic type of <T> and type of class with id that will use to  extends generic type T. 
+// This allows us to create repositories for different types of items, 
+// while still ensuring that each item has an id property that can be used for retrieval and deletion.
+
+
+type Identifiable = { id: number };
+
+class Repository2<T extends Identifiable> {   
+    private items: any[] = [];
+
+    add(item: any): void {
+        this.items.push(item);
+    }
+
+    getAll(): any[] {
+        return this.items;
+    }
+
+    getById(id: number): any {
+        return this.items.find(item => item.id === id);
+    }   
+
+    removebyId(id: number): void {
+        this.items = this.items.filter(item => item.id !== id);
+    }   
+
+    
+}
 
 
 
