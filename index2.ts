@@ -309,17 +309,17 @@ class Repository{
 type Identifiable = { id: number };
 
 class Repository2<T extends Identifiable> {   
-    private items: any[] = [];
+    private items: T[] = [];
 
-    add(item: any): void {
+    add(item: T): void {
         this.items.push(item);
     }
 
-    getAll(): any[] {
+    getAll(): T[] {
         return this.items;
     }
 
-    getById(id: number): any {
+    getById(id: number): T | undefined {
         return this.items.find(item => item.id === id);
     }   
 
@@ -330,7 +330,21 @@ class Repository2<T extends Identifiable> {
     
 }
 
+type User = { 
+    id: number; 
+    name: string;
+    email: string;
+};
 
+const userRepository = new Repository2<User>();
+userRepository.add({ id: 1, name: "John Doe", email: "john@example.com" });
+userRepository.add({ id: 2, name: "Jane Smith", email: "jane@example.com" });
+userRepository.add({ id: 3, name: "Bob Johnson", email: "bob@example.com" });
+
+console.log(userRepository.getAll());
+console.log(userRepository.getById(2));
+userRepository.removebyId(2);
+console.log(userRepository.getAll());   
 
 
 
