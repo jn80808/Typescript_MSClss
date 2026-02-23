@@ -347,5 +347,65 @@ userRepository.removebyId(2);
 console.log(userRepository.getAll());   
 
 
+//----------------------------------------------//
+// 98.Concreate Implementation With User Type
+//---------------------------------------------//
+
+
+
+
+type Identifiable1 = { id: number };
+
+class Repository3<T extends Identifiable1> {   
+    private items: T[] = [];
+
+    add(item: T): void {
+        this.items.push(item);
+    }
+
+    getAll(): T[] {
+        return this.items;
+    }
+
+    getById(id: number): T | undefined {
+        return this.items.find(item => item.id === id);
+    }   
+
+    removebyId(id: number): void {
+        this.items = this.items.filter(item => item.id !== id);
+    }   
+
+    
+}
+
+type User1 = Identifiable1 & { 
+    name: string;
+    email: string;
+};
+
+type Book = Identifiable1 & {
+    title: string;      
+    ISBN: string;
+};
+
+
+
+const userRepository1 = new Repository3<User1>();
+userRepository1.add({ id: 1, name: "John Doe", email: "john@example.com" });
+userRepository1.add({ id: 2, name: "Jane Smith", email: "jane@example.com" });
+userRepository1.add({ id: 3, name: "Bob Johnson", email: "bob@example.com" });
+
+console.log(userRepository1.getAll());
+console.log(userRepository1.getById(2));
+userRepository1.removebyId(2);
+console.log(userRepository1.getAll());   
+
+
+
+
+
+
+
+
 
 
