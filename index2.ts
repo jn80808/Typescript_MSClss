@@ -389,7 +389,7 @@ type Book = Identifiable1 & {
 };
 
 
-
+//USER REPOSITORY
 const userRepository1 = new Repository3<User1>();
 userRepository1.add({ id: 1, name: "John Doe", email: "john@example.com" });
 userRepository1.add({ id: 2, name: "Jane Smith", email: "jane@example.com" });
@@ -399,6 +399,18 @@ console.log(userRepository1.getAll());
 console.log(userRepository1.getById(2));
 userRepository1.removebyId(2);
 console.log(userRepository1.getAll());   
+
+
+//BOOK REPOSITORY
+const bookRepository = new Repository3<Book>();
+bookRepository.add({ id: 1, title: "The Great Gatsby", ISBN: "978-0743273565" });
+bookRepository.add({ id: 2, title: "To Kill a Mockingbird", ISBN: "978-0061120084" });
+bookRepository.add({ id: 3, title: "1984", ISBN: "978-0451524935" });
+
+console.log(bookRepository.getAll());
+console.log(bookRepository.getById(2));
+bookRepository.removebyId(2);
+console.log(bookRepository.getAll());
 
 
 
