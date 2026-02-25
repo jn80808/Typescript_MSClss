@@ -413,9 +413,9 @@ bookRepository.removebyId(2);
 console.log(bookRepository.getAll());
 
 
-
-
-
+//----------------------------------------------//
+// ----100.Composing New Classes With Mixins----//
+//----------------------------------------------!
 
 
 
