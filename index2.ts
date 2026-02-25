@@ -417,9 +417,13 @@ console.log(bookRepository.getAll());
 // ----100.Composing New Classes With Mixins----//
 //----------------------------------------------!
 
-function Timestamped<T extends new (...args: any[]) => {}>(Base: T) {
+function Timestamp(Base: any) {
     return class extends Base {
-        timestamp = new Date();
+        protected timestamp: Date = new Date();
+
+            getTimestamp(): Date {
+                return this.timestamp;
+            }
     };
 }
 
@@ -427,11 +431,11 @@ class User2 {
     constructor(public name: string, public email: string) {}
 }
 
-const TimestampedUser = Timestamped(User2);
-const user = new TimestampedUser("John Doe", "john@example.com");
-console.log(user.name); // Output: John Doe
-console.log(user.email); // Output: john@example.com
-console.log(user.timestamp); // Output: current date and time
+// const TimestampedUser = Timestamped(User2);
+// //const user = new TimestampedUser("John Doe", "john@example.com");
+// console.log(user.name); // Output: John Doe
+// console.log(user.email); // Output: john@example.com
+// console.log(user.getTimestamp()); // Output: current date and time
 
 
 
