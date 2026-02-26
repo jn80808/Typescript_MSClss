@@ -431,14 +431,53 @@ class User2 {
     constructor(public name: string, public email: string) {}
 }
 
-// const TimestampedUser = Timestamped(User2);
-// //const user = new TimestampedUser("John Doe", "john@example.com");
-// console.log(user.name); // Output: John Doe
-// console.log(user.email); // Output: john@example.com
-// console.log(user.getTimestamp()); // Output: current date and time
+//with Generic type of T to represent the type of class that will be used as the base for the mixin.
+// This allows us to create mixins that can be applied to any class, while still providing type safety and ensuring that the resulting class has the expected properties and methods.
+
+function Timestamp2<T extends new (...args: any[]) => {}>(Base: T) {
+    return class extends Base {
+        protected timestamp: Date = new Date();
+
+            getTimestamp(): Date {
+                return this.timestamp;
+            }
+    };
+}
+
+const TimestampedUser = Timestamp2(User2);
+const user = new TimestampedUser("John Doe", "john@example.com");
+console.log(user.name); // Output: John Doe
+console.log(user.email); // Output: john@example.com
+console.log(user.getTimestamp()); // Output: current date and time
 
 
+//WITH TYPE 
 
+type Constructor<T = {}> = new (...args: any[]) => {};
 
+function Timestamp3<T extends Constructor>(Base: T) {
+    return class extends Base {
+        protected timestamp: Date = new Date();
+
+        getTimestamp(): Date {
+            return this.timestamp;
+        }
+    };
+}
+
+class User3 {
+    constructor(public name: string, public email: string) {}
+}
+
+class UserWithTimestamp extends Timestamp3(User3) {
+    constructor(name: string, email: string) {
+        super(name, email);
+    }
+}
+
+const userWithTimestamp = new UserWithTimestamp("Jane Smith", "jane@example.com");
+console.log(userWithTimestamp.name); // Output: Jane Smith
+console.log(userWithTimestamp.email); // Output: jane@example.com
+console.log(userWithTimestamp.getTimestamp()); // Output: current date and time
 
 
