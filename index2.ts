@@ -466,18 +466,17 @@ function Timestamp3<T extends Constructor>(Base: T) {
 }
 
 class User3 {
-    constructor(public name: string, public email: string) {}
+    constructor(public name: string) {}
 }
 
 class UserWithTimestamp extends Timestamp3(User3) {
     constructor(name: string, email: string) {
-        super(name, email);
+        super(name);
     }
 }
 
 const userWithTimestamp = new UserWithTimestamp("Jane Smith", "jane@example.com");
 console.log(userWithTimestamp.name); // Output: Jane Smith
-console.log(userWithTimestamp.email); // Output: jane@example.com
 console.log(userWithTimestamp.getTimestamp()); // Output: current date and time
 
 
