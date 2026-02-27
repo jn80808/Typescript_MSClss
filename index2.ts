@@ -480,3 +480,32 @@ console.log(userWithTimestamp.name); // Output: Jane Smith
 console.log(userWithTimestamp.getTimestamp()); // Output: current date and time
 
 
+//----------------------------------------------//
+// ----Practice ----//
+//----------------------------------------------!
+// Employee Management System Requirements
+// Project Description:
+// You are developing a simple employee management system for a company. Implement the following requirements using TypeScript:
+
+// TODO 1: Class Definition
+// Create a class Employee with the following properties:
+
+// name (string, public)
+
+// age (number, public)
+
+// salary (number, private)
+
+// id (number, protected)
+
+// TODO 2: Constructor Shorthand
+// Use shorthand syntax in the constructor to initialize the properties name and age.
+
+// TODO 3: Accessors (Getters/Setters)
+// Implement getter and setter methods for the salary property. The setter should ensure the salary is a positive number.
+
+// TODO 4: Static Members
+// Add a static property companyName (string, public) and a static method getCompanyName that returns the company name.
+
+
+
