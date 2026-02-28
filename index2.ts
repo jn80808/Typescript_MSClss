@@ -519,6 +519,7 @@ console.log(userWithTimestamp.getTimestamp()); // Output: current date and time
 //TODO 1:
 
 class Employee {
+    
     constructor(
         public name: string, //TODO 2: Constructor Shorthand
         public age: number,
@@ -539,14 +540,74 @@ class Employee {
             throw new Error("Salary must be a positive number.");
         }
     }
-
-
-
-
 }
 
+    
+    //TODO 5 
+    class Manager extends Employee {
+        constructor(
+            name: string,
+            age: number,
+            salary: number,
+            id: number,
+            public department: string
+        ) {
+            super(name, age, salary, id);
+        }
+    }
 
 
+
+
+
+
+
+
+//TODO 1:
+
+class Employee1 {
+
+    //TODO 4: Static Members
+    static companyName: string = "Tech Solutions Inc.";
+    
+    constructor(
+        public name: string, //TODO 2: Constructor Shorthand
+        public age: number,
+        private _salary: number,
+        protected id: number
+
+    ){}
+
+//TODO 3: Accessors (Getters/Setters)
+    get salary(): number {
+        return this._salary;
+    }
+
+    set salary(newSalary: number) {
+        if (newSalary <= 0) {
+            this._salary = newSalary;
+        } else {
+            throw new Error("Salary must be a positive number.");
+        }
+    }
+    
+    static getCompanyName(): string {
+        return Employee1.companyName;
+    }
+}
+    
+    //TODO 5 
+    class Manager1 extends Employee1 {
+        constructor(
+            name: string,
+            age: number,
+            salary: number,
+            id: number,
+            public department: string
+        ) {
+            super(name, age, salary, id);
+        }
+    }
 
 
 
