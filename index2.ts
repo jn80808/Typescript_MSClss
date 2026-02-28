@@ -450,10 +450,11 @@ console.log(user.name); // Output: John Doe
 console.log(user.email); // Output: john@example.com
 console.log(user.getTimestamp()); // Output: current date and time
 
+//--------------------//
+//----WITH TYPE ---//
+//--------------------//
 
-//WITH TYPE 
-
-type Constructor<T = {}> = new (...args: any[]) => {};
+type Constructor<T = {}> = new (...args: any[]) => {}; //Type alias for a constructor function that can create instances of any class. The generic type parameter T allows us to specify the type of the instance that will be created by the constructor, providing better type safety and autocompletion when using the mixin.
 
 function Timestamp3<T extends Constructor>(Base: T) {
     return class extends Base {
@@ -481,8 +482,9 @@ console.log(userWithTimestamp.getTimestamp()); // Output: current date and time
 
 
 //----------------------------------------------//
-// ----Practice ----//
-//----------------------------------------------!
+// ----101. Practice ----//
+//----------------------------------------------//
+
 // Employee Management System Requirements
 // Project Description:
 // You are developing a simple employee management system for a company. Implement the following requirements using TypeScript:
@@ -506,6 +508,54 @@ console.log(userWithTimestamp.getTimestamp()); // Output: current date and time
 
 // TODO 4: Static Members
 // Add a static property companyName (string, public) and a static method getCompanyName that returns the company name.
+
+
+
+//----------------------------------------------//
+// ----102. Solution ----//
+//----------------------------------------------//
+
+
+//TODO 1:
+
+class Employee {
+    constructor(
+        public name: string, //TODO 2: Constructor Shorthand
+        public age: number,
+        private _salary: number,
+        protected id: number
+
+    ){}
+
+//TODO 3: Accessors (Getters/Setters)
+    get salary(): number {
+        return this._salary;
+    }
+
+    set salary(newSalary: number) {
+        if (newSalary <= 0) {
+            this._salary = newSalary;
+        } else {
+            throw new Error("Salary must be a positive number.");
+        }
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
