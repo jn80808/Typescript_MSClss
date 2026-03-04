@@ -36,9 +36,6 @@ type Holidays = {
 } [];
 
 abstract class Department3 {
-    constructor(public name: string) {
-    }
-
     protected abstract holidays: Holidays ;
     protected constructor (protected name: string) {
     }
