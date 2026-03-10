@@ -41,7 +41,8 @@ abstract class Department3 {
     }
 }
 
-class ITDepartment extends Department3 {// error because holidays is not implemented, in abstract class we have to implement all the abstract properties and methods in the child class
+class ITDepartment extends Department3 {// error because holidays is not implemented, 
+                                        // in abstract class we have to implement all the abstract properties and methods in the child class
 }
 
 class AccountingDepartment extends Department3 {// error because holidays is not implemented, in abstract class we have to implement all the abstract properties and methods in the child class
