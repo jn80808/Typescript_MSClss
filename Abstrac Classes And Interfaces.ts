@@ -58,9 +58,37 @@ class AccountingDepartment3 extends Department3 {
 }
 
 
+//----------------------------------------------//
+// 105.Shared Methods in Abstract Classes 
+//---------------------------------------------//
 
 
+type Holidays2 = {
+    name: string;
+    date: Date;
+} [];
 
+abstract class Department4 {
+    protected abstract holidays: Holidays ;
+    protected constructor (protected name: string) {
+    }
+}
+
+class ITDepartment extends Department4 {// error because holidays is not implemented, 
+                                        // in abstract class we have to implement all the abstract properties and methods in the child class
+}
+
+class AccountingDepartment extends Department34 {// error because holidays is not implemented, in abstract class we have to implement all the abstract properties and methods in the child class
+}
+
+
+class ITDepartment4 extends Department4 {
+    protected holidays: Holidays = []; // now it is implemented, so no error
+}
+
+class AccountingDepartment4 extends Department4 {
+    protected holidays: Holidays = []; // now it is implemented, so no error
+}
 
 
 
