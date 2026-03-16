@@ -98,14 +98,14 @@ class AccountingDepartment4 extends Department4 {
 //-------------------------------------------------//
 
 
-type Holidays2 = {
+type Holidays3 = {
     name: string;
     date: Date;
 } [];
 
-abstract class Department4 {
+abstract class Department5 {
     protected abstract holidays: Holidays ;
-    protected constructor (protected name: string) {
+    protected  constructor (protected name: string) { 
     }
         public addHoliday(holidays: Holidays[number]) {
             if (Array.isArray(this.holidays)) {
@@ -118,13 +118,166 @@ abstract class Department4 {
 }
 
 
-class ITDepartment4 extends Department4 {
+class ITDepartment5 extends Department5 {
     protected holidays: Holidays = []; // now it is implemented, so no error
 }
 
-class AccountingDepartment4 extends Department4 {
+class AccountingDepartment5 extends Department5 {
     protected holidays: Holidays = []; // now it is implemented, so no error
 }
+
+
+const itDepartment5 = new ITDepartment5();
+const itDepartment6 = new ITDepartment5('IT'); // error because constructor is protected, so it cannot be instantiated outside the class or its subclasses  
+
+
+const itDepartment7 = new ITDepartment5(name: 'IT'); 
+
+
+
+
+//-------------Makes Constructor Public and back again to protected--------------------------//
+type Holidays4 = {
+    reason: string;
+    date: Date;
+} [];
+
+abstract class Department6 {
+    protected abstract holidays: Holidays ;
+    protected constructor (protected name: string) { //update constructor to public, because protected constructor cannot be instantiated outside the class or its subclasses, so we need to make it public to allow instantiation
+    }
+        public addHoliday(holidays: Holidays4) {
+            if (Array.isArray(holidays)) {
+                for (const holiday of this.holidays) {
+                this.holidays.push(holiday);
+            }   
+            
+        }
+    }
+}
+
+
+class ITDepartment8 extends Department6 {
+    protected holidays: Holidays = [];
+    
+    constructor() {
+        super("IT Department"); // call the constructor of the parent class to initialize the name property
+    }
+    
+}
+
+class AccountingDepartment8 extends Department6 {
+    protected holidays: Holidays = []; 
+
+        constructor() {
+        super("Accounting Department"); // call the constructor of the parent class to initialize the name property
+    }
+    
+}
+
+const itDepartment9 = new ITDepartment8();
+
+const itDepartment11: ITDepartment8 = new ITDepartment8();
+
+const accountingDepartment9: AccountingDepartment8 =
+    new AccountingDepartment8();
+
+const accountingDepartment10: ITDepartment8 =
+    new ITDepartment8();
+
+
+
+//--------------------------------------------------//
+// 107. Adding Holiday to the Department
+//-------------------------------------------------//
+type Holidays5 = {
+    reason: string;
+    date: Date;
+}[];
+
+abstract class Department7 {
+    protected abstract holidays: Holidays5;
+
+    protected constructor(protected name: string) {}
+
+    // accept an ARRAY of holidays
+    // public addHoliday(holidays: Holidays5) {
+    //     this.holidays.push(...holidays);
+    // }
+        public addHoliday(holidays: Holidays5) {
+            if (Array.isArray(holidays)) {
+                for (const holiday of this.holidays) {
+                this.holidays.push(holiday);
+                }   
+            }
+        }
+    
+}
+
+
+//-- Child classes implementing the abstract class --//
+class ITDepartment9 extends Department7 {
+    protected holidays: Holidays5 = [];
+
+    constructor() {
+        super("IT Department");
+    }
+}
+
+class AccountingDepartment9 extends Department7 {
+    protected holidays: Holidays5 = [];
+
+    constructor() {
+        super("Accounting Department");
+    }
+}
+
+
+//-- List of holidays --//
+const ITDepartmentHolidays: Holidays5 = [
+    {
+        date: new Date(2025, 11, 25),
+        reason: "Christmas"
+    },
+    {
+        date: new Date(2026, 0, 1),
+        reason: "New Year's Day"
+    }
+];
+
+const AccountingDepartmentHolidays: Holidays5 = [
+    {
+        date: new Date(2025, 10, 25),
+        reason: "Accounting Team Building Day"
+    },
+    {
+        date: new Date(2026, 0, 1),
+        reason: "New Year's Day"
+    }
+];
+
+
+// Create departments
+const ITDepartment10 = new ITDepartment9();
+const AccountingDepartment10 = new AccountingDepartment9();
+
+
+// Add holidays (ARRAY now works)
+ITDepartment10.addHoliday(ITDepartmentHolidays);
+AccountingDepartment10.addHoliday(AccountingDepartmentHolidays);
+
+
+// Print result
+console.log(ITDepartment10);
+console.log(AccountingDepartment10);
+
+
+
+
+
+
+
+
 
 
 
