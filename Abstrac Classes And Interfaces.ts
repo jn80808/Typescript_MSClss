@@ -190,6 +190,7 @@ const accountingDepartment10: ITDepartment8 =
 //--------------------------------------------------//
 // 107. Adding Holiday to the Department
 //-------------------------------------------------//
+
 type Holidays5 = {
     reason: string;
     date: Date;
@@ -233,7 +234,8 @@ class AccountingDepartment9 extends Department7 {
 }
 
 
-//-- List of holidays --//
+//-- 107 adding holidays to Classes --//
+// -- List of holidays --//
 const ITDepartmentHolidays: Holidays5 = [
     {
         date: new Date(2025, 11, 25),
@@ -273,7 +275,93 @@ console.log(AccountingDepartment10);
 
 
 
+//--------------------------------------------------//
+// 108. Print Holidays Method 
+//-------------------------------------------------//
 
+
+
+type Holidays6 = {
+    reason: string;
+    date: Date;
+}[];
+
+abstract class Department8 {
+    protected abstract holidays: Holidays6;
+
+    protected constructor(protected name: string) {}
+
+    // accept an ARRAY of holidays
+    // public addHoliday(holidays: Holidays5) {
+    //     this.holidays.push(...holidays);
+    // }
+        public addHoliday(holidays: Holidays6) {
+            if (Array.isArray(holidays)) {
+                for (const holiday of this.holidays) {
+                this.holidays.push(holiday);
+                }   
+            }
+        }
+    
+}
+
+
+//-- Child classes implementing the abstract class --//
+class ITDepartment12 extends Department8 {
+    protected holidays: Holidays6 = [];
+
+    constructor() {
+        super("IT Department");
+    }
+}
+
+class AccountingDepartment12 extends Department8 {
+    protected holidays: Holidays6 = [];
+
+    constructor() {
+        super("Accounting Department");
+    }
+}
+
+
+//-- 107 adding holidays to Classes --//
+// -- List of holidays --//
+const ITDepartmentHolidays1: Holidays6 = [
+    {
+        date: new Date(2025, 11, 25),
+        reason: "Christmas"
+    },
+    {
+        date: new Date(2026, 0, 1),
+        reason: "New Year's Day"
+    }
+];
+
+const AccountingDepartmentHolidays1: Holidays6 = [
+    {
+        date: new Date(2025, 10, 25),
+        reason: "Accounting Team Building Day"
+    },
+    {
+        date: new Date(2026, 0, 1),
+        reason: "New Year's Day"
+    }
+];
+
+
+// Create departments
+const ITDepartment13 = new ITDepartment12();
+const AccountingDepartment13 = new AccountingDepartment12();
+
+
+// Add holidays (ARRAY now works)
+ITDepartment13.addHoliday(ITDepartmentHolidays1);
+AccountingDepartment13.addHoliday(AccountingDepartmentHolidays1);
+
+
+// Print result
+console.log(ITDepartment13);
+console.log(AccountingDepartment13);
 
 
 
