@@ -279,8 +279,6 @@ console.log(AccountingDepartment10);
 // 108. Print Holidays Method 
 //-------------------------------------------------//
 
-
-
 type Holidays6 = {
     reason: string;
     date: Date;
