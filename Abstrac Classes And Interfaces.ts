@@ -382,7 +382,7 @@ AccountingDepartment13.printHolidays();
 
 
 //--------------------------------------------------//
-//109. Method Overriding in child class 109. Method Overriding in child class
+// 109. Method Overriding in child class
 //-------------------------------------------------//
 
 type Holidays7 = {
@@ -430,7 +430,7 @@ class ITDepartment14 extends Department9 {
         super("IT Department");
     }
 
-        //--- over ride the print holiday : adding name as department name 108 Print holidays method ---//
+        //--- 109.over ride the print holiday : adding name as department name 108 Print holidays method ---//
         public printHolidays() {
             if (this.holidays.length === 0) {
                 return "No holidays added yet.";
@@ -453,9 +453,7 @@ class AccountingDepartment14 extends Department9 {
     constructor() {
         super("Accounting Department");
     }
-
-    
-        //--- over ride the print holiday : adding name as department name 108 Print holidays method ---//
+        //--- 109. over ride the print holiday : adding name as department name 108 Print holidays method ---//
         public printHolidays() {
             if (this.holidays.length === 0) {
                 return "No holidays added yet.";
@@ -469,7 +467,7 @@ class AccountingDepartment14 extends Department9 {
 
             });       
         }
-
+        
 }
 
 
