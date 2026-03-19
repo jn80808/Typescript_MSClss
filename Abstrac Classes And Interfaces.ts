@@ -381,6 +381,130 @@ AccountingDepartment13.printHolidays();
 
 
 
+//--------------------------------------------------//
+//109. Method Overriding in child class 109. Method Overriding in child class
+//-------------------------------------------------//
+
+type Holidays7 = {
+    reason: string;
+    date: Date;
+}[];
+
+abstract class Department9 {
+    protected abstract holidays: Holidays7;
+
+    protected constructor(protected name: string) {}
+
+        // -- add holidays method --//
+        public addHoliday(holidays: Holidays7) {
+            if (Array.isArray(holidays)) {
+                for (const holiday of this.holidays) {
+                this.holidays.push(holiday);
+                }   
+            }
+        }
+
+        //--- 108 Print holidays method ---//
+        public printHolidays() {
+            if (this.holidays.length === 0) {
+                return "No holidays added yet.";
+            }
+            console.log("Here is the list of holidays:");
+
+            this.holidays.forEach((holiday : {reason: string; date: Date}, index: number) => {
+                console.log(
+                    `${index + 1}. ${holiday.reason} on ${holiday.date.toDateString()}`
+                );
+
+            });       
+        }
+    }
+            
+    
+
+//-- Child classes implementing the abstract class --//
+class ITDepartment14 extends Department9 {
+    protected holidays: Holidays7 = [];
+
+    constructor() {
+        super("IT Department");
+    }
+
+        //--- over ride the print holiday : adding name as department name 108 Print holidays method ---//
+        public printHolidays() {
+            if (this.holidays.length === 0) {
+                return "No holidays added yet.";
+            }
+            console.log(`Here is the list of holidays for ${this.name}:`);
+
+            this.holidays.forEach((holiday : {reason: string; date: Date}, index: number) => {
+                console.log(
+                    `${index + 1}. ${holiday.reason} on ${holiday.date.toDateString()}`
+                );
+
+            });       
+        }
+    }
+            
+
+class AccountingDepartment14 extends Department9 {
+    protected holidays: Holidays7 = [];
+
+    constructor() {
+        super("Accounting Department");
+    }
+
+    
+        //--- over ride the print holiday : adding name as department name 108 Print holidays method ---//
+        public printHolidays() {
+            if (this.holidays.length === 0) {
+                return "No holidays added yet.";
+            }
+            console.log(`Here is the list of holidays for ${this.name}:`);
+
+            this.holidays.forEach((holiday : {reason: string; date: Date}, index: number) => {
+                console.log(
+                    `${index + 1}. ${holiday.reason} on ${holiday.date.toDateString()}`
+                );
+
+            });       
+        }
+
+}
+
+
+//-- 107 adding holidays to Classes --//
+// -- List of holidays --//
+const ITDepartmentHolidays2: Holidays7 = [
+    {
+        date: new Date(2025, 11, 25),
+        reason: "Christmas"
+    },
+    {
+        date: new Date(2026, 0, 1),
+        reason: "New Year's Day"
+    }
+];
+
+const AccountingDepartmentHolidays2: Holidays7 = [
+    {
+        date: new Date(2025, 10, 25),
+        reason: "Accounting Team Building Day"
+    },
+    {
+        date: new Date(2026, 0, 1),
+        reason: "New Year's Day"
+    }
+];
+
+
+// Create departments
+const ITDepartment15 = new ITDepartment14();
+const AccountingDepartment15 = new AccountingDepartment14();
+
+//use printHolidays method to print the holidays for each department
+ITDepartment13.printHolidays();
+AccountingDepartment13.printHolidays();
 
 
 
