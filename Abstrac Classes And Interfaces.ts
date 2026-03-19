@@ -289,10 +289,7 @@ abstract class Department8 {
 
     protected constructor(protected name: string) {}
 
-    // accept an ARRAY of holidays
-    // public addHoliday(holidays: Holidays5) {
-    //     this.holidays.push(...holidays);
-    // }
+        // -- add holidays method --//
         public addHoliday(holidays: Holidays6) {
             if (Array.isArray(holidays)) {
                 for (const holiday of this.holidays) {
@@ -300,9 +297,24 @@ abstract class Department8 {
                 }   
             }
         }
-    
-}
 
+        //--- 108 Print holidays method ---//
+        public printHolidays() {
+            if (this.holidays.length === 0) {
+                return "No holidays added yet.";
+            }
+            console.log("Here is the list of holidays:");
+
+            this.holidays.forEach((holiday : {reason: string; date: Date}, index: number) => {
+                console.log(
+                    `${index + 1}. ${holiday.reason} on ${holiday.date.toDateString()}`
+                );
+
+            });       
+        }
+    }
+            
+    
 
 //-- Child classes implementing the abstract class --//
 class ITDepartment12 extends Department8 {
@@ -361,6 +373,10 @@ AccountingDepartment13.addHoliday(AccountingDepartmentHolidays1);
 console.log(ITDepartment13);
 console.log(AccountingDepartment13);
 
+
+//use printHolidays method to print the holidays for each department
+ITDepartment13.printHolidays();
+AccountingDepartment13.printHolidays();
 
 
 
