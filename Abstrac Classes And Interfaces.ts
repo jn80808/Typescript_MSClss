@@ -529,8 +529,8 @@ abstract class Department10 {
         }
 
         //--- 108 Print holidays method ---//
-        public abstract printHolidays() : void;
-
+        //public abstract printHolidays(message:string) : void;
+          public abstract printHolidays(message:string) : void;
 
     }
             
