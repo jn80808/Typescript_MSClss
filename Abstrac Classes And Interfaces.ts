@@ -509,8 +509,6 @@ AccountingDepartment13.printHolidays();
 // 110. Introduction to Abstract Methods 
 //-------------------------------------------------//
 
-
-
 type Holidays8 = {
     reason: string;
     date: Date;
@@ -531,19 +529,9 @@ abstract class Department10 {
         }
 
         //--- 108 Print holidays method ---//
-        public printHolidays() {
-            if (this.holidays.length === 0) {
-                return "No holidays added yet.";
-            }
-            console.log("Here is the list of holidays:");
+        public abstract printHolidays() : void;
 
-            this.holidays.forEach((holiday : {reason: string; date: Date}, index: number) => {
-                console.log(
-                    `${index + 1}. ${holiday.reason} on ${holiday.date.toDateString()}`
-                );
 
-            });       
-        }
     }
             
     
