@@ -168,6 +168,26 @@ const rob : AdminUser = {
     numberofUsersReporting: 5,
 }
 
+//--------------------------------------------------//
+// 115. Interfaces and Generics in TypeScript
+//-------------------------------------------------//
+
+
+interface Automobile {
+    type: string;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
