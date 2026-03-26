@@ -586,7 +586,7 @@ class RegisteredUser extends User, Password { // this will give an error because
 
 
 //--------------------------------------------------------------//
-// 122.Interface and Access Modifiers in ypeScript
+// 122.Interface and Access Modifiers in ypeScripts
 //-------------------------------------------------------------//
 
 
