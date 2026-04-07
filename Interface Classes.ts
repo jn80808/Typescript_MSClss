@@ -699,7 +699,9 @@ class Truck3 implements Automobile3<string, AutoMobileBrand3, AutoMobileColors3>
 interface IUser {
     id: number;
     name: string;
+
 }
+
 
 class iUserClass implements IUser {
     constructor(
@@ -710,6 +712,31 @@ class iUserClass implements IUser {
 
 
 
+// You can add additional properties to the IUser interface by declaring it again with the new properties, 
+// and TypeScript will merge the declarations together to create a single interface that includes all the properties from both declarations. 
+// So here we have declared the IUser interface again with an additional property passWordHash, 
+// and TypeScript will merge this declaration with the previous declaration of the IUser interface to create a single interface 
+// that includes all the properties from both declarations, so now the IUser interface will have three properties id, name and passWordHash, 
+// and we can use this merged interface in our iUserClass to create objects that have all three properties.
+
+interface IUser1 {
+    id: number;
+    name: string;
+
+}
+
+interface IUser1 {
+    passWordHash: string;
+}
+
+
+class iUserClass1 implements IUser1 {
+    constructor(
+        public id: number,
+        public name: string,
+        public passWordHash: string
+    ) {}
+}
 
 
 
