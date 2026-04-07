@@ -737,14 +737,5 @@ class iUserClass1 implements IUser1 {
         public passWordHash: string
     ) {}
 }
-
-
-
-
-
-
-
-
-
-
+// 124 is in the file of Type vs Interface.ts 
 
