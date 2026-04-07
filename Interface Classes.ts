@@ -689,3 +689,35 @@ class Truck3 implements Automobile3<string, AutoMobileBrand3, AutoMobileColors3>
 
 
 }
+
+
+//--------------------------------------------------------------//
+// 123. Declaration Merging Interfaces 
+//-------------------------------------------------------------//
+
+
+interface IUser {
+    id: number;
+    name: string;
+}
+
+class iUserClass implements IUser {
+    constructor(
+        public id: number,
+        public name: string
+    ) {}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
