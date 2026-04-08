@@ -102,3 +102,35 @@ personC.greeting();
 console.log(PersonC);
 console.log(PersonC.nameClass());
 
+
+// The question is which one should you use?
+
+// The answer is that there is no straightforward way to decide, and it depends on what you are trying
+
+// to achieve.
+
+// If you're trying to implement certain design patterns which require the use of interfaces, then you
+
+// would have to use interfaces and vice versa.
+
+// But here is something that can make your life a bit easy.
+
+// --@abstract classes: 
+
+// If you need to have certain implementations in your parent class, like the greeting method we have
+
+// over here, or any static methods like the name class method that we have over here, then you're better
+
+// off using abstract classes.
+
+//So if any implementation is mandatory within the class, you need to use abstract classes.
+
+// --@interfaces:
+
+// On the other hand, if you're just looking for creating a contract for your classes and the classes
+
+// are bound to implement those contracts or interfaces, then using interfaces makes much more sense.
+
+
+
+
