@@ -71,7 +71,9 @@ abstract class PersonC {
 
     }
 
-    //so here just added a static method to the abstract class and it will work fine but if we try to add a static method to an interface it will give an error because interfaces cannot contain static methods
+    //so here just added a static method to the abstract class and it will work fine 
+    // but if we try to add a static method to an interface it will give an error 
+    // because interfaces cannot contain static methods
     public static nameClass(){
         return "Class name is PersonC";
     }
