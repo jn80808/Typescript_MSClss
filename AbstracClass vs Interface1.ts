@@ -59,3 +59,44 @@ const personB : RegisteredUserB = new RegisteredUserB({
 
 
 
+//Abstract classes can contain static methods as well, whereas interfaces cannot contain static methods.
+
+abstract class PersonC {
+    public abstract name  : string;
+    public abstract email :string;
+    public abstract phone :string;
+
+    public greeting () {
+        console.log(`Hello ${this.name}, welcome!`);
+
+    }
+
+    //so here just added a static method to the abstract class and it will work fine but if we try to add a static method to an interface it will give an error because interfaces cannot contain static methods
+    public static nameClass(){
+        return "Class name is PersonC";
+    }
+}
+
+
+class RegisteredUserC extends PersonC {
+    constructor(
+        public name: string, 
+        public email: string, 
+        public phone: string
+    ) {
+        super();
+    }
+}
+
+const personC : RegisteredUserC = new RegisteredUserC(
+    "Joy",      
+    "joyng@gmail.com",
+    "000000888888888"
+)
+
+
+personC.greeting();
+
+console.log(PersonC);
+console.log(PersonC.nameClass());
+
