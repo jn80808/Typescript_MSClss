@@ -133,4 +133,14 @@ console.log(PersonC.nameClass());
 
 
 
+// Implementing
+// ____________  an interface will have the same properties as that interface inherited or applied to a class.
+
+// Implementing an interface in a class means that the class agrees to follow the rules defined by that interface, inheriting its properties and methods. This aligns with the objective of understanding how interfaces work in programming, demonstrating that by implementing an interface, you provide specific functionalities that the interface requires.
+
+// Was this content relevant to you?
+
+
+// true
+// _______Interfaces are similar to type aliases, but only for object types.
 
