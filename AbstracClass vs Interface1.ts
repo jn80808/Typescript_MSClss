@@ -141,6 +141,6 @@ console.log(PersonC.nameClass());
 // Was this content relevant to you?
 
 
-// true
+// trues
 // _______Interfaces are similar to type aliases, but only for object types.
 
