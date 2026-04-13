@@ -1,9 +1,10 @@
 {
+  "exclude": ["index.ts","app2.ts","node_modules","Abstrac Classes And Interfaces.ts","AbstracClass vs Interface1.ts","AbstracClass vs Interface2.ts","app2.ts","index2.ts","Interface Classes.ts","Types vs Interface.ts","TypescriptCompiler.ts"],
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+       "rootDir": "./src",
+ "outDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
