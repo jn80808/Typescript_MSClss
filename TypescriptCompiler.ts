@@ -143,6 +143,59 @@
 // and tell TypeScript to compile all JavaScript files in the disk directory.
 
 
+//"outDir": "./dist",
+
+//so what i observe that when i run the typescript compiler without the outdir 
+//pag nag tsc ako automatically it will create a JavaScript file .js .d.ts, .js.map, d.ts.map in the same directory as the TypeScript file which is src.
+// so instead of creating a JavaScript file in the same directory as the TypeScript file, it will create a JavaScript file in the dist directory that we have specified in the outDir property.
+//So this is how we can use the outDir property in our tsconfig.json file to specify the output directory for the compiled JavaScript files.
+
+//so here example in the src folder i add new directory (new folder inside src) and name this function 
+// and inside this function folder i will create a new .js .d.ts, .js.map, d.ts.map file userName.ts 
+// and when i run the tsc in the terminal it will create a new folder in dist with same name and under with this folder will have ts file same in the source added 
+
+//so here ang expected output ko sa dist folder it will only generate javascript file .js
+//pero ang nang yayari is it also generate the .d.ts, .js.map, d.ts.map file which is not what i want.
+
+//nang yayare to kasi sa tsconfig file is naka set to true tong mga nasa baba 
+
+    // Other Outputs
+    // "sourceMap": true,
+    // "declaration": true,
+    // "declarationMap": true,
+
+// Setting	        Output
+// declaration	    .d.ts
+// sourceMap	    .js.map
+// declarationMap	.d.ts.map
+
+// "declaration": true - This is a Type Definition file Used when your code is used by other TypeScript projects (like a library)
+// "sourceMap": true - Helps debugging , Maps .js back to your original .ts file in DevTools
+// "declarationMap": true - Links .d.ts back to .ts ,Useful for library developers
+
+// When should you keep them?
+// Keep declaration: true → if you're building a library / reusable package
+// Keep sourceMap: true → if you want easy debugging
+// Remove them → if you're just learning / simple project
+
+
+
+//and since for now i dont need these file so i will set these properties to false in tsconfig file like this
+
+
+ // Other Outputs
+    // "sourceMap": false,
+    // "declaration": false,
+    // "declarationMap": false,
+
+
+//so i will create new folder in src folder and name this OutFiles and add new file inside and name it removeFiles.ts 
+
+
+
+
+
+
 
 
 
