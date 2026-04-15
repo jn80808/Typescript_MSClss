@@ -198,6 +198,27 @@
 //---------------------------------------------------------------------------------------//
 
 
+//Target is a property in tsconfig.json file that specifies the target version of JavaScript that TypeScript will compile to.
+//By default, TypeScript will target the latest version of JavaScript that is supported by the current version of TypeScript.
+//However, you can specify a different target version if you want to ensure that your code is compatible with older browsers or environments that do not support the latest JavaScript features.
+//The target property accepts a string value that represents the target version of JavaScript. Some of the common target values include:
+// "ES3" : This is the default target version for TypeScript. It is compatible with all JavaScript environments, including older browsers.
+// "ES5" : This target version is compatible with most modern browsers and environments. It includes features such as classes, modules, and arrow functions.
+// "ES6" or "ES2015" : This target version includes all the features of ES5, as well as new features such as let and const, template literals, and destructuring.
+// "ES2016" : This target version includes all the features of ES6, as well as new features such as async functions and the exponentiation operator.
+// "ES2017" : This target version includes all the features of ES2016, as well as new features such as shared memory and atomics.
+// "ES2018" : This target version includes all the features of ES2017, as well as new features such as rest/spread properties and asynchronous iteration.
+// "ES2019" : This target version includes all the features of ES2018, as well as new features such as optional catch binding and JSON superset.
+// "ES2020" : This target version includes all the features of ES2019, as well as new features such as nullish coalescing and optional chaining.
+// "ES2021" : This target version includes all the features of ES2020, as well as new features such as logical assignment operators and numeric separators.
+// "ES2022" : This target version includes all the features of ES2021, as well as new features such as class fields and private methods.
+// "ES2023" : This target version includes all the features of ES2022, as well as new features such as top-level await and temporal.
+// "ES2024" : This target version includes all the features of ES2023, as well as new features such as pattern matching and record & tuple types.
+
+//So if I want to target ES2024, I can set the target property in my tsconfig.json file like this:
+// "target": "ES2024"
+//Now when I run the TypeScript compiler, it will compile my TypeScript code to JavaScript that is compatible with ES2024.
+
 
 
 
