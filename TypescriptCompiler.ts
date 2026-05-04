@@ -225,8 +225,10 @@
 // 133. TypeScript Core Libs
 //---------------------------------------------------------------------------------------//
 
+//  add the following code to it.
+// just write simple javascriptcode 
 
-
+const button = document.getElementById(elemetid: 'button');
 
 
 
