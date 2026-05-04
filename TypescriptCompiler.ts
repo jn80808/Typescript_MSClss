@@ -228,7 +228,7 @@
 //  add the following code to it.
 // just write simple javascriptcode 
 
-const button = document.getElementById(elemetid: 'button');
+//const button = document.getElementById(elemetid: 'button');
 
 
 
