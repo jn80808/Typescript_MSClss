@@ -7,17 +7,6 @@ interface User1 {
 }
 
 
-class Admin1 implements User1 {
-    constructor (
-        public username : string, 
-        public email : string, 
-        public adminLevel : number) {}
-
-        login() : void {
-            console.log("Admin logged in");
-        }
-
-}
 
 class Customer1 implements User1 {
     constructor (
@@ -40,9 +29,9 @@ class Auth {
 }
 
 
-const admin: Admin1 = new Admin1("joy", "joy@gmail.com", 1);
+//const admin: Admin1 = new Admin1("joy", "joy@gmail.com", 1);
 const customer: Customer1 = new Customer1("mike", "mike@gmail.com", "laptop, phone", ["laptop", "phone"]);
 
-Auth.login(admin);
+//Auth.login(admin);
 Auth.login(customer);
 
