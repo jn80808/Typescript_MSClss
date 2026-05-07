@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Employee3 {
+class Employee1 {
     constructor(name, //TODO 2: Constructor Shorthand
     age, _salary, id) {
         this.name = name;
@@ -29,9 +29,9 @@ class Employee3 {
     }
 }
 //TODO 4: Static Members
-Employee3.companyName = "Tech Solutions Inc.";
+Employee1.companyName = "Tech Solutions Inc.";
 //TODO 5 
-class Manager3 extends Employee3 {
+class Manager3 extends Employee1 {
     constructor(name, age, salary, id, department) {
         super(name, age, salary, id);
         this.department = department;
@@ -41,8 +41,8 @@ class Manager3 extends Employee3 {
         return `${super.getDetailsParent}, Department: ${this.department}`;
     }
 }
-const employee = new Employee3("Alice", 30, 50000, 1);
+const employee = new Employee1("Alice", 30, 50000, 1);
 console.log(employee.getDetailsParent); // Output: Name: Alice, Age: 30, Salary: 50000, ID: 1
-console.log(employee.getDetails); // Error: Property 'getDetails' does not exist on type 'Employee3 only on the Manager'.
+//console.log(employee.getDetails); // Error: Property 'getDetails' does not exist on type 'Employee3 only on the Manager'.
 const manager = new Manager3("Bob", 40, 80000, 2, "IT");
 console.log(manager.getDetails); // Output: Name: Bob, Age: 40, Salary: 80000, ID: 2, Department: IT
