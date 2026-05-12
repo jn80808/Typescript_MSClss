@@ -1,5 +1,7 @@
 //type casting in typescript
 
+
+//-------------<> keyword for type casting
 //type casting is a way to tell the compiler to treat a value as a different type. 
 // It can be useful when you know more about the type of a value than the compiler does,
 // or when you want to override the compiler's type inference.
@@ -15,6 +17,8 @@
 let firstNameNoCasting  = "John";
 let firstNameWithCasting = <any>"John";
 
+
+//-------------as keyword for type casting
 // another way to do type casting is by using the "as" keyword
 let firstNameWithCastingAs = "John" as any;
 
