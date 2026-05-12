@@ -1,4 +1,4 @@
-//duck
+//duck --- 20 
 
 //Declaration and Annotation in TypeScript
 
@@ -46,6 +46,12 @@ function addNumbers(a : CustomNumber, b : CustomNumber) : CustomNumber {
     return a + b;
 }   
 
+//inference : when TypeScript can automatically determine the type of a variable or function return type based on the assigned value or function body
 let sum : CustomNumber = addNumbers(5, 10);
 console.log(sum);
+
+//declaration: is declaring a type
+//annotation : when you assigning a type 
+//inference : when TypeScript can automatically determine the type of a variable 
+
 
