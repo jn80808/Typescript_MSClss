@@ -45,7 +45,7 @@ let post: Post ={
         name: "John Doe",
         email: "john.doe@example.com"
     },
-    awards1:{
+    awards:{
     name: "Best Post of the Year",
     year: 2023
     },
