@@ -31,15 +31,11 @@ type NetworkState = //discriminating union type for network states based on the 
 function handleNetworkState(networkState: NetworkState) {
     switch (networkState.state) { //discriminating union using the 'state' property
         case "loading":
-            console.log("Network request is loading...");
-            break;
+            return "Network request is loading...";
         case "failed":
-            console.error(`Network request failed with error: ${networkState.error} and code: ${networkState.code}`);
-            break;
+            return `Error: ${networkState.error}, Code: ${networkState.code}`;
         case "success":
-            console.log("Network request succeeded with data:", networkState.data);
-            console.log("Response details:", networkState.response);
-            break;
+            return `DownLoading ${networkState.response.summary} with status ${networkState.response.status} and title ${networkState.response.title}`;
         default:
             const exhaustiveCheck: never = networkState;
             throw new Error(`Unhandled network state: ${exhaustiveCheck}`);
