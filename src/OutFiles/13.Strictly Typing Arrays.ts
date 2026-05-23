@@ -9,7 +9,8 @@ let e: string[] = ["a", "b", "c"];
 let f: (number | string | boolean)[] = [1, "a", true]; //explicitly typed as an array of union types
 
 
-
+// strictly typing arrays helps catch errors at compile time and provides better code readability and maintainability. 
+// It ensures that only the specified types of elements can be added to the array, preventing unintended type errors.
 
 
 
