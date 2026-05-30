@@ -154,3 +154,7 @@ console.log(reserve2 (new Date(), new Date (), "Switzerland","Austrilia")) //wit
 console.log(reserve2 (new Date(), "Switzerland","Austrilia")) //with no return date 
 
 
+//in normal day to day job this is so long and theres a better way to do it 
+//this is just to show what is function overloading 
+//
+
