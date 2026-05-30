@@ -8,7 +8,7 @@ function intro1_named_function (name: string, age: number): string  /*output dat
 
 
 //function expression
-const intro2_function_expression = function (name: string, age: number): string {
+const intro2_function_expression = function (name: string, age: number): string { //using the word of function 
     return `My name is ${name} and I am ${age} years old.`;
 }
 
