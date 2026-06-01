@@ -56,6 +56,7 @@ getNumber([1, 2, 3]); // OK
 getNumber(["a"]);     // Error
 
 //@A : its only work on the number you specify <> at line 52 
+// so if you want a string type you have to create another type alias for string and so on 
 
 
 //@B : Generic on the function declaration <T> belongs to the function declaration.
