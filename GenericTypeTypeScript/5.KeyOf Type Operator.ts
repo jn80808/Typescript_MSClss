@@ -121,6 +121,8 @@ let partialPerson1: PartialPerson = {
 console.log(partialPerson1.name); // Output: "John"
 console.log(partialPerson1.age); // Output: undefined
 console.log(partialPerson1.address); // Output: undefined
+console.log(partialPerson1.address); // Output: undefined
+console.log(partialPerson1.address); // Output: undefined
 
 
 
