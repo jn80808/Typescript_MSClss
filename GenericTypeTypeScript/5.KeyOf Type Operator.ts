@@ -127,12 +127,6 @@ console.log(partialPerson1.address); // Output: undefined
 
 
 
-
-
-
-
-
-
 type KeyValuePair<K extends string, V> = {
     key: K;
     value: V;
