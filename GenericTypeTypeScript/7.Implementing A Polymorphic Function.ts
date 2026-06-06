@@ -23,6 +23,9 @@ const filter1 = (array: any[], predicate: (item: any) => boolean) => {
  }
 
 
+console.log(filter1(numbers, predicate)); // Output: [8, 9, 10]
+
+
 let evenNumbers = filter1(numbers, (num) => num % 2 === 0);
 console.log(evenNumbers); // Output: [2, 4]
 
@@ -35,13 +38,9 @@ let animials = ["cat", "dog", "rabbit", "hamster"];
 
 function filterCat(item:string){
     return item === "cat";
-
 }
 
 console.log(filter1(animials, filterCat)); // Output: ["cat"]
-
-console.log(filter1(numbers, predicate)); 
-console.log(filter1(animials, filterCat)); 
 
 
 let animalsWithA = filter1(animials, (animal) => animal.includes("a"));
