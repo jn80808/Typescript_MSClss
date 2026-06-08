@@ -34,6 +34,7 @@ class User1 {
 const user4 : User1 = new User1("Joy",28, "joyng@gmail.com")
 const user5 : User1 = new User1("Joy",28, "joyng@gmail.com","Ng")
 
+//---- inheritance ----//
 
 class Admin extends User1{}
 
@@ -54,7 +55,7 @@ class Admin1 extends User1{
 
 
 //const <varname> : datatype = new <classname("valuetopass in class")> 
-const admin: Admin = new Admin("Joy",28,"joyng@gmail.com")
+const admin: Admin1 = new Admin1("Joy",28,"joyng@gmail.com")
 
 console.log(user4) 
 // Output: 
@@ -75,4 +76,6 @@ console.log(admin)
 //   isAdmin: true
 // }
 
+//Admin1 Class : Child Class 
+//User1 : Parent Class 
 
