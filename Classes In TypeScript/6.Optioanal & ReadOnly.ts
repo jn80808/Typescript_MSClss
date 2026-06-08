@@ -95,7 +95,7 @@ const user5 : User2 = new User2("Joy",28, "joyng@gmail.com","Ng")
 //now still lastname not getting error since we added in the constructor 
 user4.lastname ="last";
 
-//here assigning a new email address : now its getting an error 
+//here assigning a new email address : now its getting an error because now email is on "readonly" 
 user5.email ="joyngRICHLIFE@gmail.com" 
 
 
