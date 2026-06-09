@@ -68,7 +68,7 @@ class User {
 
 // Public                 /                               /                           /
 // Protected              X                               /                           /
-// Private                X                               X                            /
+// Private                X                               X                           /
 
 
 
