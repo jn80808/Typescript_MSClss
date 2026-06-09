@@ -23,6 +23,10 @@ const user4 : User = new User("Joy",28, "joyng@gmail.com")
 const user5 : User = new User("Joy",28, "joyng@gmail.com","Ng")
 
 
+//-------------------------------------//
+//---------- PUBLIC MODIFIERS ----------//
+//-------------------------------------//
+
 
 
 // Whenever we declare a property or a method inside a class, just the way that we have declared over
@@ -48,7 +52,9 @@ const user5 : User = new User("Joy",28, "joyng@gmail.com","Ng")
 
 
 
-
+//----------------------//
+//---- Parent Class ----// 
+//----------------------//
 class User1 {
     public name: string ; //-- adding public prefix this is now setting to public modifiers or public property  
     public age: number ;
@@ -84,6 +90,9 @@ const user2 : User1 = new User1("Joy",28, "joyng@gmail.com","Ng")
 // so let's go and check the admin class 
 
 
+//----------------------//
+//---- Child Class ----// 
+//--------------------//
 
 class Admin extends User1{
     isAdmin: boolean = true;
@@ -103,9 +112,12 @@ class Admin extends User1{
 
 const admin1: Admin = new Admin("Joy",28,"joyng@gmail.com", 20) 
 
+
+//----------------------//
+//---- Final Object ----// 
+//----------------------//
+
 console.log(user1.name)     //Output: Joy 
-
-
 admin1.PrintName(); //Output: Joy 
                     //which means Joy is accessible inside the child class.
 
