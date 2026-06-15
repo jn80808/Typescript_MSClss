@@ -3,19 +3,14 @@
 //----------------------//
 
 class User1 {
-    public name: string ; //-- Public Property   
-    public age: number ;
-    public readonly email: string 
-    public lastname?: string;      
-    //protected phone: number;  //-- Protected Property 
-    private phone: number; //--private : if you go to the chile class you will see that the phone now is getting error 
+        //this is shorthand way to make properties as well parameters in constructor so its make lessen 
+        constructor(
+                public name: string, 
+                public age: number,
+                readonly email: string,
+                private phone: number, 
+                public lastname?: string) {
 
-        constructor(name: string, age: number,email: string,phone: number, lastname?: string) { //-- Added phone since we added the properties 
-            this.name = name;
-            this.age = age;
-            this.email = email;
-            this.lastname = lastname; 
-            this.phone = phone; 
         }
 
     public greet(): string {   // --from parent method 
@@ -28,8 +23,6 @@ class User1 {
         
     }
 
-
-
 }
 
 const user1 : User1 = new User1("Joy",28, "joyng@gmail.com",1234) //1234 phone is added 
@@ -40,12 +33,13 @@ const user2 : User1 = new User1("Joy",28, "joyng@gmail.com",2143,"Ng",)  //1234 
 //--------------------//
 
 class Admin extends User1{
-    isAdmin: boolean = true;
-    userReporting: number;  
+    public isAdmin: boolean = true;
+    
 
-    constructor(name: string, age: number,email: string, phone:number,userReporting: number, lastname?: string){   // added phone here at parameter at constructor before in the super method 
-        super(name, age,email,phone,lastname);  // added phone 
-        this.userReporting = userReporting;
+    constructor(name: string, age: number,email: string, phone:number,
+        public userReporting: number, lastname?: string)
+        {  
+        super(name, age,email,phone,lastname);      
     }
 
     // -- Public Method : public properties 
