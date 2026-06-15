@@ -7,21 +7,29 @@ class User1 {
     public age: number ;
     public readonly email: string 
     public lastname?: string;      
-    protected phone: number;  //-- Protected Property 
+    //protected phone: number;  //-- Protected Property 
+    private phone: number; //--private : if you go to the chile class you will see that the phone now is getting error 
 
         constructor(name: string, age: number,email: string,phone: number, lastname?: string) { //-- Added phone since we added the properties 
             this.name = name;
             this.age = age;
             this.email = email;
             this.lastname = lastname; 
-            this.phone = phone;  //-- Added phone : So any property that is declared as a protected property is available inside that class.
-                                //Apart from being available inside the parent class where you declare such a property, a protected property
-                                //is also available inside the child class.
+            this.phone = phone; //Phone is private now and only accessible in the parent class 
         }
 
     public greet() {   // -- Public Method 
-        console.log("Hello, my name is " + this.name); //name is public properties so here name property is accessible 
+        console.log("Hello, my name is " + this.name); 
     }
+
+    //Creating Method for private properties 
+    public printParentPhone(){
+        console.log(this.phone);  //Phone is private now and only accessible in the parent class 
+        
+    }
+
+
+
 }
 
 const user1 : User1 = new User1("Joy",28, "joyng@gmail.com",1234) //1234 phone is added 
@@ -47,12 +55,12 @@ class Admin extends User1{
 
     //-- Public Method : protected properties 
     public PrintNumber(){   
-        console.log(this.phone);  //phone is accessible 
+        console.log(this.phone);  //phone is private in the parent class so here this is not accessible anymore in the child class 
     }
 
     // -- Protected Method : protected properties 
     protected PrintNumber1(){   
-        console.log(this.phone);  //phone is accessible 
+        console.log(this.phone);  //phone is private in the parent class
     }
 
     // -- Public Method : Protected Method
@@ -74,16 +82,37 @@ const admin1: Admin = new Admin("Joy",28,"joyng@gmail.com", 20,12435) //Added Ph
 console.log(user1.name)  //public properties 
 console.log(admin1.name)  //public properties 
 
-//-- protected properties :
-console.log(user1.phone) // protected properties 
-console.log(admin1.phone) // protected properties 
+//-- Private properties :
+console.log(user1.phone) // phone is private in the parent class
+console.log(admin1.phone) // phone is private in the parent class
 
 //-- child method <Admin> : Public Method : protected properties 
 admin1.PrintNumber();
 
-//-- child method <Admin> : Protected Method : protected properties 
+//-- parent properties : Private directly calling will get error 
 admin1.PrintNumber1();
 
 //-- child method <Admin> : Public Method : Protected Method
 admin1.userProtectedPhone();
+
+
+//Parent Method with private properties inside 
+admin1.printParentPhone();
+
+
+//-----Comparing Access Modifiers 
+
+//                     Final Object                    Child Class                 Parent class
+
+// Public                 /                               /                           /
+// Protected              X                               /                           /
+// Private                X                               X                           /
+
+
+
+
+
+
+
+
 
