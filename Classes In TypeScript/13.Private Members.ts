@@ -86,18 +86,19 @@ console.log(admin1.name)  //public properties
 console.log(user1.phone) // phone is private in the parent class
 console.log(admin1.phone) // phone is private in the parent class
 
-//-- child method <Admin> : Public Method : protected properties 
+//-- child method <Admin> : Public Method : private properties 
 admin1.PrintNumber();
 
-//-- parent properties : Private directly calling will get error 
+//-- child method <Admin> : Protected Method : private properties  
 admin1.PrintNumber1();
 
-//-- child method <Admin> : Public Method : Protected Method
-admin1.userProtectedPhone();
 
-
-//Parent Method with private properties inside 
+//accessing using child : Parent Method with private properties inside 
 admin1.printParentPhone();
+
+////accessing using parent :Parent Method with private properties inside 
+user1.printParentPhone();
+
 
 
 //-----Comparing Access Modifiers 
