@@ -46,10 +46,16 @@ const joy : Person = new Person ("Joy", "Ng");
 jhon.age= 30;  // just accessing it like any other property on my class, which is John.age, and I'm setting it to 30.
 joy.age= 28; 
 
+
+
 console.log(joy.fullName());
 
+console.log(jhon.age) // output : undefined 
 
+// Now it so turns out that whenever you set a property using a setter, you need a special method in order
 
+// to get the value of that property also.
 
+// And that method is called getter.
 
 
