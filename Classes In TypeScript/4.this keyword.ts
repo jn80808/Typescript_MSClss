@@ -1,5 +1,6 @@
 
-// ------------at the constructor passing only parameter name and age and not assigning it to the class properties
+// ------------at the constructor passing only parameter name and age 
+// and not assigning it to the class properties
 
 class User1 {
     name: string | undefined

@@ -26,6 +26,8 @@
 
 class Counter {
     count = 0  //count have default value of 0 
+
+    //static properties 
     static count1 = 0 // that is a static keyword.
                       // This static keyword makes this property as a property, a field which belongs to the class itself.
                       // This field is not available in the instance of the class, but is only available inside the class.
