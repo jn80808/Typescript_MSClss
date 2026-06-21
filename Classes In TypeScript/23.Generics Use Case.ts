@@ -26,7 +26,18 @@
 // And then we'll replace those any types with generics.
 
 class Repository {
-    private item = [];
-}
+    private items : any[]= [];
 
+        add (item: any){
+        this.items.push(item);
+    }
+
+    getByid(id:number): any| undefined{
+        return this.items.find((item)=>item.id ===id)
+    }
+
+    getAll(): any[]{
+        return this.items;
+    }
+}
 
