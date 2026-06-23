@@ -93,12 +93,90 @@ type User1 ={
     email: string;
 }
 
+// So where we have this user type we can say that this user type is extension of the identifiable type (Identifiable1) at line 63
 
-const userRepositorywithTypeCastUser1 = new RepositorywithGenericType1<User1>();
+// that we have declared here, because it also has the ID which is of the type number.
 
-userRepositorywithTypeCastUser1.add({
+// So we are repeating our code over here.
+
+// So instead of repeating our code, we can say that the user type extends the identifiable type 
+
+// by like this User = Identifiable1 &
+
+type User2 = Identifiable1 & {
+    id: number;
+    name: string;
+    email: string;
+}
+
+//And now id can be removed from the user because identifiable already has the id property.
+
+type User3 = Identifiable1 & {
+    name: string;
+    email: string;
+}
+
+const userRepositorywithTypeCastUser2 = new RepositorywithGenericType1<User3>();
+
+userRepositorywithTypeCastUser2.add({
     id:1,
     name: "Joy",
     email: "joyng@gmail.com"
 })
+
+
+
+// So user will now have three properties.
+
+// It will extend identifiable and it will have name and email.
+
+// Similarly, I can create another type and let's call this type as books.
+
+// Again this is going to extend the identifiable type and then have certain properties which are unique
+
+// to the book.
+
+
+type Book = Identifiable1 & {
+    title : string;
+    ISBN: number;
+}
+
+
+// Now, just like we created user repository, I can go ahead and create a book repository.
+
+// So let's go ahead and create a books repository
+
+
+const booksRepository = new RepositorywithGenericType1<Book>();
+
+
+
+// That is the repository class that we created.
+
+// And this time only with the type of a book.
+
+// Books repository is only a books repository.
+
+// It cannot accept users.
+
+// This will not work.
+
+const UserRepository1 = new RepositorywithGenericType1<User3>();
+
+const booksRepository1 = new RepositorywithGenericType1<Book>();
+
+UserRepository1.add({
+    id:1,
+    name: "Joy",
+    email: "joyng@gmail.com"
+})
+
+
+booksRepository1.add({
+    id:1,
+    name: "Joy", // see here the typescript show an error  
+    email: "joyng@gmail.com"
+})
+
 
