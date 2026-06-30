@@ -173,10 +173,15 @@ UserRepository1.add({
 })
 
 
-// booksRepository1.add({
-//     id:1,
-//     name: "Joy", // see here the typescript show an error  
-//     email: "joyng@gmail.com"
-// })
+booksRepository1.add({
+    id: 1,
+    title: "The Joy Life ",
+    ISBN: 1234,
+});
+
+
+console.log(booksRepository1.getAll)
+
+
 
 

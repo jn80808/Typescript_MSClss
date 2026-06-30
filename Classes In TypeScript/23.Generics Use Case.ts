@@ -142,6 +142,25 @@ class RepositorywithGenericType1<T extends Identifiable> { //Now This makes sure
 
 // Let's create a repository of books
 
+class RepositorywithGenericTypesSummart_withGenericType<T extends Identifiable> {
+    private items : T[]= [];
+
+        add (item: T){
+        this.items.push(item);
+    }
+
+    getByid(id:number): T| undefined{
+        return this.items.find((item)=>item.id ===id)
+    }
+
+    getAll(): T[]{
+        return this.items;
+    }
+
+    removebyId(id: number): void {
+        this.items = this.items.filter((item) => item.id !== id);
+    }
+}
 
 //----------------Clean version without comments
 
