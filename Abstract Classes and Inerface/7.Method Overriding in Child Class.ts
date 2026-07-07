@@ -28,9 +28,6 @@ abstract class Department {
             console.log("No holidays available.");
         }
         console.log("List of holidays:");
-        for (const holiday of this.holidays) {
-            console.log(`Date: ${holiday.date.toDateString()}, Reason: ${holiday.reason}`);
-        }
 
         this.holidays.forEach((holiday, index) => {
             console.log(`${index + 1}. Date: ${holiday.date.toDateString()}, Reason: ${holiday.reason}`);
@@ -45,6 +42,23 @@ class ITDepartment extends Department {
     constructor() {
         super("IT Department");
     }
+        //the print method is overridden in the child class to provide specific implementation for ITDepartment
+        //it will print the child method printHolidays instead of the parent method printHolidays
+        //overriding the parent method printHolidays in the child class ITDepartment
+        public printHolidays() {
+        console.log(`Holidays for ${this.name}:`);
+
+        if (this.holidays.length === 0) {
+            console.log("No holidays available.");
+        }
+
+        console.log(`List of holidays for ${this.name}:`);
+
+        this.holidays.forEach((holiday, index) => {
+            console.log(`${index + 1}. Date: ${holiday.date.toDateString()}, Reason: ${holiday.reason}`);
+        });
+    }
+
 }
 
 
@@ -57,8 +71,20 @@ class AdminDepartment extends Department {
         super("Admin Department");
     }
 
+    public printHolidays() {
+        console.log(`Holidays for ${this.name}:`);
 
+        if (this.holidays.length === 0) {
+            console.log("No holidays available.");
+        }
+        console.log(`List of holidays for ${this.name}:`);
+
+        this.holidays.forEach((holiday, index) => {
+            console.log(`${index + 1}. Date: ${holiday.date.toDateString()}, Reason: ${holiday.reason}`);
+        });
     }
+
+}
 
 //--create constants for holidays for ITDepartment and AdminDepartment
 const itHolidays: Holiday = [
