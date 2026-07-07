@@ -45,6 +45,7 @@ class ITDepartment extends Department {
         //the print method is overridden in the child class to provide specific implementation for ITDepartment
         //it will print the child method printHolidays instead of the parent method printHolidays
         //overriding the parent method printHolidays in the child class ITDepartment
+
         public printHolidays() {
         console.log(`Holidays for ${this.name}:`);
 
@@ -70,6 +71,10 @@ class AdminDepartment extends Department {
         constructor() {
         super("Admin Department");
     }
+    
+    //the print method is overridden in the child class to provide specific implementation for ITDepartment
+    //it will print the child method printHolidays instead of the parent method printHolidays
+    //overriding the parent method printHolidays in the child class ITDepartment
 
     public printHolidays() {
         console.log(`Holidays for ${this.name}:`);
