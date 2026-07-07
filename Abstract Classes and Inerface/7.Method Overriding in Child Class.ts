@@ -63,15 +63,13 @@ class ITDepartment extends Department {
 }
 
 
-
-
 class AdminDepartment extends Department {
         protected holidays: Holiday = []
 
         constructor() {
         super("Admin Department");
     }
-    
+
     //the print method is overridden in the child class to provide specific implementation for ITDepartment
     //it will print the child method printHolidays instead of the parent method printHolidays
     //overriding the parent method printHolidays in the child class ITDepartment
@@ -151,4 +149,13 @@ adminDepartment.addHolidays([
 //so instead console.log we can use printHolidays method to print holidays for ITDepartment and AdminDepartment
 itDepartment.printHolidays();
 adminDepartment.printHolidays();
+
+
+// i dont have a choice but to achieve my goals to have better life for myself and for my family
+// difinitely someday all of prayers and dreams become my reality 
+// I believe in my self
+// being ready is not a emotion its a choice 
+
+
+
 
