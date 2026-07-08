@@ -94,6 +94,71 @@
 // the required properties and methods.
 
 
+interface User {
+    userName: string;
+    email: string;
+    login(): void;
+}
+
+class Admin implements User { //Implement User Interface 
+    constructor(
+        public userName: string,    // properties declare in user interface Line 97
+        public email: string,       // properties declare in user interface Line 97
+        public adminLevel: number   //additional properties for admin class , unique properties for admin class  
+    ) {}
+
+    login(): void {  //implement the log in method from the User Interface Line 97 So you can see TypeScript is creating this binding contract. Whenever a new user class is declared, can be an admin class, can be a customer class.
+                    //So whenever a developer declares these kind of classes, TypeScript will make sure that all the functionality, all the properties of the user interface are implemented in that particular user class.
+        
+     console.log("Admin is now logged in");
+
+    }
+}
+
+//----------------Create Customer class that implement the User Interface from line 97
+// This customer class can have its own methods as well as properties which are different from admin,
+// but the only condition is that it must adhere to the user interface contract. 
+
+class Customer implements User {
+    constructor(
+        public userName: string,
+        public email: string
+    ) {}
+
+    login(): void { //implement the login method in the User Interface 
+        console.log("Customer is now logged in");
+    }
+}
+
+// Example
+const admin = new Admin("Joy", "joy@example.com", 1);
+admin.login();
+
+const customer = new Customer("John", "john@example.com");
+customer.login();
 
 
+//----------------- new class 
+// So this is a simple method where it just grabs the user and triggers or invokes the login method on the user object.
+// Now using this we can create different types of users 
+
+
+class Auth {
+    public static login(user: User) {
+    user.login();
+    }
+}
+
+
+const admin1: Admin = new Admin("Alice", "alice@gmail.com", 1)
+Auth.login(admin1)
+
+const customerJoy:Customer = new Customer("Joy","joy@gmail.com")
+Auth.login(customerJoy)
+
+// Now you will see customer is a different class altogether.
+
+// Admin is a different class altogether, but auth is able to work both with admin as well as with customer,
+
+// just because admin and customer adhere or implement the same interface.
 
