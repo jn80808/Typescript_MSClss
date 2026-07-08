@@ -21,18 +21,12 @@ abstract class Department {
 
     }
 
-    public printHolidays() {
-        console.log(`Holidays for ${this.name}:`);
+    public abstract printHolidays() :void; //So if you see over here, abstract methods are just definitions and they do not have a body.
+                                           //So all we are trying to say over here is that every child class must implement print holidays method,
+                                           //which is void and does not return anything.
 
-        if (this.holidays.length === 0) {
-            console.log("No holidays available.");
-        }
-        console.log("List of holidays:");
 
-        this.holidays.forEach((holiday, index) => {
-            console.log(`${index + 1}. Date: ${holiday.date.toDateString()}, Reason: ${holiday.reason}`);
-        });
-    }
+
 };
 
 
