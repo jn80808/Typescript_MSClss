@@ -113,10 +113,19 @@ class Admin implements User {
 
 
 
+interface Person {
+  name: string;
+  email: string;
+  age: number;
+  phone?: number; // optional property
+  greet?(): void; // optional method
+}
 
-
-
-
+const person: Person = {
+  name: "John",
+  email: "john@email.com",
+  age: 32,
+};
 
 
 
