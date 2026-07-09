@@ -142,4 +142,5 @@ const counter1: Counter1 = new Counter1();
 
 
 
-
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng

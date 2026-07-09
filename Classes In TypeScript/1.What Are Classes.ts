@@ -45,4 +45,5 @@ user4.greet(); // Output: Hello, my name is Jane
 
     
 
-
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng

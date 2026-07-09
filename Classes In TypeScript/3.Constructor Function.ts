@@ -43,3 +43,5 @@ user1.greet(); // Output: Hello, my name is John Doe
 user2.greet(); // Output: Hello, my name is Jane Doe
 
 
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng

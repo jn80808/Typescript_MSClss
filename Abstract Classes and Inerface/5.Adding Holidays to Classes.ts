@@ -101,3 +101,6 @@ adminDepartment.addHolidays([
 console.log('IT Department Holidays:', itDepartment);
 console.log('Admin Department Holidays:', adminDepartment);
 
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng
+// email: joygng0088@gmail.com

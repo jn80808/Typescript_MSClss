@@ -89,3 +89,5 @@ counter.count;
 // But having said that, that's not the only use case for static members of the class.
 
 
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng

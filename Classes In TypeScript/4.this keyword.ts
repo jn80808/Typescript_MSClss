@@ -69,3 +69,11 @@ class User3 {
 const user3 = new User3("Joy",28, "joyng@gmail.com")
 
 console.log(user3.greet); 
+
+
+
+
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng
+
+

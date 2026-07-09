@@ -114,6 +114,8 @@ console.log(person6.FullName());
 person5.age = 300; // This will throw an error
 person6.age = 25; // This will work fine
 
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng
 
 //----------------------------------------------//
 // 94.Static Members
@@ -745,9 +747,9 @@ console.log(manager.getDetails); // Output: Name: Bob, Age: 40, Salary: 80000, I
 
 
 
-
-
-
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng
+// email: joygng0088@gmail.com
 
 
 

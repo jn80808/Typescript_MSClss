@@ -165,3 +165,7 @@ const personCwithClass: PersonC = new PersonC("joy", "Ng");
 
 
 //125. is in the file Abstract Classes vS interfaces.ts  
+
+
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng

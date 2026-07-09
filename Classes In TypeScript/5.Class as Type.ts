@@ -37,3 +37,6 @@ user1.name =123
 //assigning value thats match is no error 
 user1.name ="Joy"
 
+// Copyright (c) 2026 Joy Ng
+// Author: Joy Ng
+// email: joygng0088@gmail.com
