@@ -1,3 +1,6 @@
+//here we will have multiple interfaces and we will inherit from multiple interfaces
+
+
 interface User {
   name: string;
   email: string;
@@ -36,22 +39,11 @@ const userWithAddress: UserWithAddress = {
 };
 
 
-// Because UserWithAddress extends User, it must contain all the properties from User plus address.
 
-// Think of it as inheritance
-// User
-// ├── name
-// ├── email
-// ├── phone
-// └── gender
-//         │
-//         ▼
-// UserWithAddress
-// ├── name
-// ├── email
-// ├── phone
-// ├── gender
-// └── address
+
+
+
+
 
 
 
