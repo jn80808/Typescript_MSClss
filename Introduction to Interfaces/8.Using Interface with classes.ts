@@ -1,7 +1,4 @@
 
-//------------------------------interface with generic types -----------------------------
-
-
 
 enum AutomobileTypes {
     car = "car",
@@ -40,12 +37,8 @@ interface Automobile<Type, Brand, Colors> {
 
 }
 
-//AutomobileTypes : The first one should be of the type of automobile And then we are saying that the type can be any of the values from within automobile types enum.
-//AutomobileBrands: And secondly, it requires a brand And we are saying any value from the enum automobile brands So it can be any brand which is there within the automobile brands enum.
-//AutomobileColors:  And finally it says colors So we are saying any value from automobile colors can be used as an array with this particular generic type.
-//const ferrari: Automobile< AutomobileTypes, AutomobileBrands, AutomobileColors>
-// <GENERIC Name> 
-// <AutomobileTypes,AutomobileBrands, AutomobileColors> - So this is generic 
+
+
 
 //--- EX.1
 const ferrari: Automobile<AutomobileTypes,AutomobileBrands, AutomobileColors>={
@@ -66,17 +59,6 @@ const honda: Automobile<string, string, string> = {
     description: "This is a Honda",
 }
 
-// So you can see while creating Ferrari we used "enums" as generic types.
-
-// But while creating Honda we use "strings" as generic types.
-
-// And in both the cases we did use the automobile interface and because of generic types, automobile
-
-// interface becomes very flexible because we are able to use any generic type along with the automobile
-
-// interface.
-
-
 
 //--- EX.3
 //<string, AutomobileBrands, number> - generic type (generic data type )
@@ -93,6 +75,12 @@ const toyota : Automobile<string, AutomobileBrands, number> = {
 console.log(ferrari);
 console. log(honda);
 console.log(toyota);
+
+
+
+
+
+
 
 
 
