@@ -70,22 +70,32 @@ const toyota : Automobile<string, AutomobileBrands, number> = {
 }
 
 
-// PRINT to see the output 
+class Car implements Automobile<string, AutomobileBrands, AutomobileColors> {
+    public type: string = "car";
 
-console.log(ferrari);
-console. log(honda);
-console.log(toyota);
+    constructor(
+        public brand: AutomobileBrands,
+        public colors: AutomobileColors[],
+        public description: string
+    ) {}
+}
+
+const ferrariCar: Car = new Car(
+    AutomobileBrands.ferrari,
+    [AutomobileColors.red, AutomobileColors.black],
+    "This is a Ferrari"
+);
+
+console.log(ferrariCar);
 
 
-
-
-
-
-
-
-
-
-
+// output : 
+// Car {
+//   type: "car",
+//   brand: "ferrari",
+//   colors: ["red", "black"],
+//   description: "This is a Ferrari"
+// }
 
 
 
