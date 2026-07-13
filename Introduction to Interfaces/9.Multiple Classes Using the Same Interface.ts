@@ -38,7 +38,7 @@ interface Automobile<Type, Brand, Colors> {
 
 
 
-
+//EX.1 Create Class Car that Implement Interface 
 class Car implements Automobile<string, AutomobileBrands, AutomobileColors> {
     public type: string = "car"; 
 
@@ -48,6 +48,8 @@ class Car implements Automobile<string, AutomobileBrands, AutomobileColors> {
         public description: string      
     ) {}
 }
+
+//Create an intance of Car Class 
 
 const ferrariCar: Car = new Car(
     AutomobileBrands.ferrari,
@@ -65,6 +67,40 @@ console.log(ferrariCar);
 //   colors: ["red", "black"],
 //   description: "This is a Ferrari"
 // }
+
+
+
+//EX.2 Create Truck Car that Implement Interface 
+class Truck implements Automobile<string, AutomobileBrands, AutomobileColors> {
+    public type: string = "truck";
+
+    constructor(
+        public brand: AutomobileBrands,
+        public colors: AutomobileColors[],
+        public description: string
+    ) {}
+}
+
+
+//Create an intance of Truck Class 
+
+const toyotaTruck: Truck = new Truck(
+    AutomobileBrands.toyota,
+    [AutomobileColors.black, AutomobileColors.silver],
+    "This is a Toyota Truck"
+);
+
+
+console.log(toyotaTruck);
+
+// OUTPUT :
+// Truck {
+//   type: "truck",
+//   brand: "toyota",
+//   colors: ["black", "silver"],
+//   description: "This is a Toyota Truck"
+// }
+
 
 
 
