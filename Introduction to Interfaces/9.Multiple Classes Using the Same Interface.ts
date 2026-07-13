@@ -1,5 +1,4 @@
 
-
 enum AutomobileTypes {
     car = "car",
     bus = "bus",
@@ -39,13 +38,14 @@ interface Automobile<Type, Brand, Colors> {
 
 
 
+
 class Car implements Automobile<string, AutomobileBrands, AutomobileColors> {
-    public type: string = "car"; //Automobile <Type, Brand, Colors>  : <Type>
+    public type: string = "car"; 
 
     constructor(
-        public brand: AutomobileBrands, //<Brand> automobile interface over here is forcing us to implement the class in a specific structure<Type, Brand, Colors> . It is acting like a contract and will force the developers to follow the contract. The beauty of interfaces is that they are not concrete implementations
-        public colors: AutomobileColors[], // <Colors>
-        public description: string      //description 
+        public brand: AutomobileBrands, 
+        public colors: AutomobileColors[], 
+        public description: string      
     ) {}
 }
 
