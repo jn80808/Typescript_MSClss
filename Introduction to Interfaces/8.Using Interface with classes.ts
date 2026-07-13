@@ -74,7 +74,7 @@ class Car implements Automobile<string, AutomobileBrands, AutomobileColors> {
     public type: string = "car";
 
     constructor(
-        public brand: AutomobileBrands,
+        public brand: AutomobileBrands, //automobile interface over here is forcing us to implement the class in a specific structure<Type, Brand, Colors> . It is acting like a contract and will force the developers to follow the contract. The beauty of interfaces is that they are not concrete implementations
         public colors: AutomobileColors[],
         public description: string
     ) {}
@@ -96,7 +96,6 @@ console.log(ferrariCar);
 //   colors: ["red", "black"],
 //   description: "This is a Ferrari"
 // }
-
 
 
 
