@@ -37,7 +37,7 @@ interface Automobile<Type, Brand, Colors> {
 }
 
 
-//EX.1 Create Truck Car that Implement Interface 
+//EX.1 Create Truck Car that Implement Automobile Interface 
 class Truck implements Automobile<string, AutomobileBrands, AutomobileColors> {
     public type: string = "truck";
 
