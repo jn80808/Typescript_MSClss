@@ -60,13 +60,13 @@ const toyotaTruck: Truck = new Truck(
 
 console.log(toyotaTruck);
 
-OUTPUT :
-Truck {
-  type: "truck",
-  brand: "toyota",
-  colors: ["black", "silver"],
-  description: "This is a Toyota Truck"
-}
+// OUTPUT :
+// Truck {
+//   type: "truck",
+//   brand: "toyota",
+//   colors: ["black", "silver"],
+//   description: "This is a Toyota Truck"
+// }
 
 
 
