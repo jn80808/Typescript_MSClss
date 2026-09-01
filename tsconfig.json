@@ -48,3 +48,25 @@
 // Copyright (c) 2026 Joy Ng
 // Author: Joy Ng
 // email: joygng0088@gmail.com
+
+
+
+// noImplicitAny -  enables error reporting for expressions and declarations where TypeScript cannot determine the type and implicitly assigns the any type.
+
+// This is very helpful because it encourages you to explicitly define types instead of accidentally relying on any. We covered the any type in detail in the previous video, so you can refer back to that video for a more detailed example.
+
+// The second option is strictNullChecks.
+
+// strictNullChecks - When this is enabled, TypeScript helps you identify values that could potentially be null or undefined. This forces you to handle those cases explicitly before using the values.
+
+// As a result, it can significantly reduce runtime errors caused by unexpected null or undefined values in JavaScript. We discussed this in more detail in the previous video about null and undefined types in TypeScript, so you can review that video if you need a refresher.
+
+// The next option is noUnusedLocals.
+
+// noUnusedLocals - This setting reports variables that have been declared but are never used.
+
+// For example, if you create a local variable but don't actually use it anywhere in your code, TypeScript will warn you about it.
+
+// This helps keep your code clean and prevents unnecessary variables from being declared.
+
+
