@@ -144,3 +144,10 @@ console.log(PersonC.nameClass());
 // trues
 // _______Interfaces are similar to type aliases, but only for object types.
 
+
+
+
+
+// If the implementation is mandatory within the class, then you should use an **abstract class**.
+
+// On the other hand, if your goal is simply to define a **contract** that classes are required to follow, then using an **interface** makes much more sense.
