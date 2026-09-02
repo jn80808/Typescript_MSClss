@@ -214,3 +214,47 @@ user2.addPoint(); //-> output : total points 1
 
 
 
+//--- function user
+
+// ex.1 without using "this" keyword, we can create a constructor function, but we will not be able to store the values in the new object that is being created.
+function User3(name, email) {}
+
+const user3 = new User3('John', 'john@email.com');
+
+console.log(user3); //-> output : User3 {}
+                    // its empty object right now 
+                    // receives the values, but doesn't store them.
+                    //never store them in the object.
+                    //no properties created in the object, because we haven't assigned them to the object using "this" keyword.
+
+
+// ex.2 with using "this" keyword, we can create a constructor function, and we will be able to store the values in the new object that is being created.
+function User4(name, email) {
+    this.name = name;    //receives the values and stores them in the new object.
+    this.email = email; //receives the values and stores them in the new object.
+}
+
+const user4 = new User4('John', 'john@email.com');
+
+console.log(user4); //-> output : User4 { name: 'John', email: 'john@email.com' }
+
+
+// 1. The `new` keyword creates a new empty object when the constructor is invoked.
+// 2. The `this` keyword is then used to assign values to that new object.
+
+
+
+
+
+
+// ex.3 with method in constructor function
+function User5(name, email) {
+    this.name = name;    
+    this.email = email; 
+
+    
+}
+
+const user5 = new User5('John', 'john@email.com');
+
+console.log(user4); //-> output : User4 { name: 'John', email: 'john@email.com' }
