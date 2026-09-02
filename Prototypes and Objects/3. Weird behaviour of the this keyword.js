@@ -311,3 +311,58 @@ book5.printAuthors();
 // The Title - Author 1
 // The Title - Author 2
 
+
+
+
+//#3.6
+// with arrow function we can also use arrow function to solve this problem because arrow function does not have its own this keyword, so it will refer to the outer this which is book5 object and we can access the title property of that object.
+
+
+const book6 ={ //-> object
+    title: "The Title",
+    authors: ["Author 1", "Author 2"],
+
+    //method 1
+    read (){   
+        console.log(this)  // console log for the whole object
+    },
+
+
+    //method 2
+    printAuthors(){
+       // console.log(this.authors)
+       this.authors.forEach((author : string ) => {
+       
+        console.log(this.title, '- ' , author) //1st argument function {1st argument} 
+        
+       }) //we remover the this on here because we are using arrow function and arrow function does not have its own this keyword, so it will refer to the outer this which is book6 object and we can access the title property of that object.
+    }    
+}
+
+
+book6.printAuthors();
+
+
+
+//  Output :
+
+// The Title - Author 1
+// The Title - Author 2
+
+
+
+
+// This is a major difference between functions declared using arrow functions and the function keyword.
+
+
+//author : string  = So over here the arrow function binds itself to the scope of the book object.
+
+// Because print authors method also binds to the book object itself.
+
+// These are the basics of the this keyword in JavaScript.
+
+
+
+// We will keep discussing the this keyword in context to the constructor functions and classes, as well
+
+// as we build upon some other crucial concepts through this section of the course.
