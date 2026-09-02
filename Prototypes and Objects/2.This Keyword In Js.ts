@@ -53,11 +53,17 @@ book.stopreading();
 
 // refer to the object itself.
 
-// Now let's look at a case of a regular function.
+
+
+// ------- Now let's look at a case of a regular function.
 
 
 
+function watchmovie() {
+    console. log(this)
+}
 
+watchmovie();
 
 
 
