@@ -7,9 +7,9 @@
 // So here is the rule of thumb.
 
 
-rule of thumb: If you are inside a function, this keyword will refer to the object that is executing the function.
- If you are inside a method, this keyword will refer to the object that owns the method. 
- If you are inside a constructor, this keyword will refer to the object that is being created.
+// rule of thumb: If you are inside a function, this keyword will refer to the object that is executing the function.
+//  If you are inside a method, this keyword will refer to the object that owns the method. 
+//  If you are inside a constructor, this keyword will refer to the object that is being created.
 
 
 // method -> object 
@@ -34,6 +34,21 @@ const book ={ //-> object
 }
 
 book.read();
+
+// output :
+// {
+//     title: "The Title",
+//     read: [Function: read]
+// }
+// read() is called through book, this refers to book.
+
+// book.read()
+//     ↓
+// "book is calling read"
+//     ↓
+// this = book
+
+
 
 // Even if we add more methods to this object at a later stage, still our rule of thumb will hold true.
 
@@ -65,6 +80,31 @@ function watchmovie() {
 
 watchmovie();
 
+
+// output : like window object in browser or global object in nodejs
+// Window { ... }
+
+
+
+// watchmovie()
+//     ↓
+// "nothing is calling it as an object method"
+//     ↓
+// this = undefined (strict mode)
+
+
+
+
+
+// "const = object this" and "function = different this."
+
+// "function" - different this” is that a normal function does not automatically get the object you declared with const.
+
+// The important thing is how you call the function.
+
+// watchmovie()
+// ^^^^^^^^^^
+// there is no object before the function
 
 
 
