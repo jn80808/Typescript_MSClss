@@ -268,7 +268,7 @@ console.log(user5); //-> output : User5 { name: 'John', email: 'john@email.com' 
 
 
 
-// ex.4 with method in constructor function
+// ex.4 with arrow function in constructor function
 function User6(name, email) {
     this.name = name;    
     this.email = email; 
@@ -289,7 +289,23 @@ function User6(name, email) {
 
 const user6 = new User6('John', 'john@email.com');
 
-console.log(user6); //-> output : User6 { name: 'John', email: 'john@email.com' }
+console.log(user6); 
+
+// Output :
+// User {name: 'John', email: 'john@email.com', points: 0, 
+// login: f, 
+// logout: f, ... }
+// addPoint: () => { ... }
+// email: "john@email.com
+// Login: () => { console
+// Logout: () => { consol
+// name: "John"
+// points: 0
+// v [[Prototype]] : Object
+// constructor: f User(
+// [[Prototype]] : Objec
+
+
 
 
 
