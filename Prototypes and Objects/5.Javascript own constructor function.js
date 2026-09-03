@@ -252,9 +252,45 @@ function User5(name, email) {
     this.name = name;    
     this.email = email; 
 
-    
+    this.login=()=>{}
+
+    this. logout=()=>{}
+
+    this. addPoint=()=>{}
+
 }
 
 const user5 = new User5('John', 'john@email.com');
 
-console.log(user4); //-> output : User4 { name: 'John', email: 'john@email.com' }
+console.log(user5); //-> output : User5 { name: 'John', email: 'john@email.com' }
+
+
+
+
+
+// ex.4 with method in constructor function
+function User6(name, email) {
+    this.name = name;    
+    this.email = email; 
+
+    this.login=()=>{
+        console.log(this.name, 'Has logged in');
+    }
+
+    this. logout=()=>{
+        console.log(this.name, 'Has logged out');
+    }
+
+    this. addPoint=()=>{
+        console.log('total points', this.points);
+    }
+
+}
+
+const user6 = new User6('John', 'john@email.com');
+
+console.log(user6); //-> output : User6 { name: 'John', email: 'john@email.com' }
+
+
+
+
