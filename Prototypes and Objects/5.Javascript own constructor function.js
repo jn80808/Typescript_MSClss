@@ -301,12 +301,7 @@ console.log(user6);
 // Logout: () => { consol
 // name: "John"
 // points: 0
-// v [[Prototype]] : Object
-// constructor: f User(
-// [[Prototype]] : Objec
-
-
-
-
-
+    // [[Prototype]] : Object
+    // constructor: f User(
+    // [[Prototype]] : Objec
 
