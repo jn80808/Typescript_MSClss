@@ -33,8 +33,18 @@ User1.prototype.addPoint = function() {
 }
 
 
+//Adding Inheritance to the User1 constructor function
+function AdminUser(name, email, role) { //role is a new property specific to AdminUser, name and email are inherited from User1
+    //User1.call(this, name, email); // Inherit properties from User1
+    User1.apply(this, [name, email]); // Inherit properties from User1 | "this" point it to itself adminuser and pass the arguments to the user constructor function 
+    this.role = role; // Add new property specific to Admin
+}
+
+
 
 
 const user1 = new User1('John', 'john@email.com');
+const admin = new AdminUser('Admin Joy Ng ', 'adminjoyng@email.com', 'super-admin');
 
 console.log(user1); 
+console.log(admin); 
