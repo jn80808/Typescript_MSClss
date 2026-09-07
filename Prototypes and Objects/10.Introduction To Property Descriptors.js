@@ -152,3 +152,22 @@
 // getOwnPropertyNames()
 // getOwnPropertySymbols()
 // getPrototypeOf()
+
+
+
+
+// value > The value of the property.
+
+// writable (boolean) > Whether this property in question is writable or not.
+// If true, you can change the property's value.
+// If false, you cannot change the property's value.
+
+// enumerable (boolean) > Whether you can enumerate or loop through this property.
+// If true, the property will appear when using things like Object.keys(),
+// for...in, etc.
+// If false, it will not appear in normal enumeration.
+
+// configurable (boolean) > Whether you can change the property's descriptor.
+// If true, you can change or delete the property, and you can change
+// descriptor settings such as writable and enumerable.
+// If false, you cannot change the property descriptor or delete the property.
