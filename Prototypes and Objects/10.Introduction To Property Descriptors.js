@@ -171,3 +171,25 @@
 // If true, you can change or delete the property, and you can change
 // descriptor settings such as writable and enumerable.
 // If false, you cannot change the property descriptor or delete the property.
+
+
+
+
+```javascript
+// .value > The value of the property
+
+// writable (boolean) > Whether the property's value can be changed
+//                 > true = the value can be changed
+//                 > false = the value cannot be changed
+
+// enumerable (boolean) > Whether the property can be enumerated
+//                     > or included when looping through the object's properties
+//                     > true = appears in loops such as for...in and Object.keys()
+//                     > false = does not appear in those enumerations
+
+// configurable (boolean) > Whether the property's descriptor can be changed
+//                        > such as changing writable or enumerable
+//                        > true = the property can be reconfigured or deleted
+//                        > false = the property's descriptor cannot be changed
+//                        > and the property cannot normally be deleted
+```
