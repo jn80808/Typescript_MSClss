@@ -121,5 +121,38 @@ will be useful when learning TypeScript decorators.
 */
 ```
 
+//------------- TypeScript
+class UserTypeScript {
+
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+        this.points = 0;
+    }
+
+    login() {
+        console.log(this.name, 'has logged in');
+    }
+
+    logout() {
+        console.log(this.name, 'has logged out');
+    }
+}
+
+
+//------------- JavaScript 
+function UserJavaScript(name, email) {
+    this.name = name;
+    this.email = email;
+    this.points = 0;
+}
+
+User.prototype.login = function () {
+    console.log(this.name, 'has logged in');
+};
+
+User.prototype.logout = function () {
+    console.log(this.name, 'has logged out');
+};
 
 
