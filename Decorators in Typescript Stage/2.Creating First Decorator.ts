@@ -135,10 +135,87 @@ metadata: undefined
 //   ...
 // }
 
-function classDecorator(target: any, context: any) {
+
+
+//Method decorator 
+function methodLoggers(originalMethod: any, context:any){
+    console.log(originalMethod);
+     console.log(context);
+}
+
+//classdecorator 
+function classDecorators(target: any, context: any) {
   console.log(target);
   console.log(context);
 }
+
+
+//------ class Part Decorators ------
+@classDecorators //calling the decorator now for class Part Decorators 
+class Persons {
+  constructor(public name: string) {}
+
+
+  //method 
+  @methodLogger1  //calling the decorator for Method Part of Decorators
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+
+}
+
+
+// Output :
+// Note: with standard TypeScript decorators, the method decorator is evaluated before the class decorator
+
+// 1. @methodLoggers -> The method decorator needs to process the greet() method first:
+//        ↓
+// 2. @classDecorators -> Then the class decorator processes the completed class:
+
+
+
+// METHOD DECORATOR
+// │
+// ├── originalMethod → greet()
+// └── context
+//     ├── kind: "method"
+//     ├── name: "greet"
+//     ├── static: false
+//     ├── private: false
+//     └── metadata: undefined
+
+
+// CLASS DECORATOR
+// │
+// ├── target → Person class
+// └── context
+//     ├── kind: "class"
+//     ├── name: "Person"
+//     ├── metadata: undefined
+//     └── addInitializer: function
+
+// //Actual output 
+// app.js:41  ƒ greet() { ... }
+
+// app.js:42  {
+//               kind: "method",
+//               name: "greet",
+//               static: false,
+//               private: false,
+//               access: { ... },
+//               metadata: undefined
+//             }
+
+// app.js:46  class Person { ... }
+
+// app.js:47  {
+//               kind: "class",
+//               name: "Person",
+//               metadata: undefined,
+//               addInitializer: ƒ
+//             }
+// }
+
 
 
 
