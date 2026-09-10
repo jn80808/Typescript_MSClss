@@ -192,4 +192,60 @@
 //                        > true = the property can be reconfigured or deleted
 //                        > false = the property's descriptor cannot be changed
 //                        > and the property cannot normally be deleted
+                          > - the configurable property tells whether the user has permission 
+                              to change the property descriptor such as to change the value of writable or enumerable settings 
+                            
 ```
+
+
+const book = {
+  title: "Book2 title",
+  pages: 250,
+  author: "Joy"
+};
+
+
+console.log(Object.getOwnPropertyDescriptors(book));
+
+
+
+// output:
+
+//   author: {
+//     value: "Joy",
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+//   }
+
+// JavaScript automatically gives these properties:
+
+// writable: true
+// enumerable: true
+// configurable: true
+
+
+// {
+//   title: {
+//     value: "Book2 title",
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+//   },
+
+//   pages: {
+//     value: 250,
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+//   },
+
+//   author: {
+//     value: "Joy",
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+//   }
+// }
+
+
