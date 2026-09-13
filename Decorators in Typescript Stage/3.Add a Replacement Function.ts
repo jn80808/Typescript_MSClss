@@ -12,8 +12,14 @@
 
 //pre
 function methodLogger(originalMethod: any, context: any) {
-  console.log(originalMethod);
-  console.log(context);
+  // console.log(originalMethod);
+  // console.log(context);
+
+  function replacementMethod(this: any,...args:any[]){
+    console.log(args);
+    console.log(this);
+  }
+
 }
 
 
