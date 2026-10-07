@@ -23,6 +23,12 @@ function methodLogger(originalMethod: any, context: any) {
 }
 
 
+
+
+
+
+
+
 class Person {
   constructor(public name: string) {}
 
